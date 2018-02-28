@@ -1,4 +1,4 @@
-//Programmer: Nguyen Li
+//Programmer: 
 //Assignment: FacePrinter
 //Due Date: February 5, 2018
 
