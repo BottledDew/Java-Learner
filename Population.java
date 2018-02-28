@@ -50,7 +50,7 @@ public class Population
 
 
 		//Input Validation: Do not accept a number less than 2 for the starting size of the population
-		while (organisms < 2);
+		while (organisms < 2)
 		{
 			System.out.println("That number is invalid.");
 			System.out.print("The starting number must be 2 or greater.");
@@ -58,7 +58,7 @@ public class Population
 		}
 
 		//Input Validation: Do not accept a negative number for average daily population increase.
-		while (increase < 0);
+		while (increase < 0)
 		{
 			System.out.println("That number is invalid.");
 			System.out.print("Please enter a positive number.");
@@ -66,7 +66,7 @@ public class Population
 		}
 
 		//Input Validation: Do not accept a number less than 1 for the number of days they will multiply.
-		while (days < 1);
+		while (days < 1)
 		{
 			System.out.println("That number is invalid.");
 			System.out.print("The starting number must be 1 or greater.");
@@ -79,7 +79,7 @@ public class Population
 		//Displays total
 		System.out.println("Day                   Organisms" +
 						   "--------------------------------");
-		for (int x = 1; x <= x; x++);
+		for (int i = 1; i <= days; i++)
 		{
 			organisms = organisms*(increase + 1);
 			System.out.print(days+"     "+organisms);
@@ -87,14 +87,6 @@ public class Population
 		}
 	}
 }
-
-
-
-
-
-
-
-
 
 
 
