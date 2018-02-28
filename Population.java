@@ -28,8 +28,6 @@ public class Population
 		Scanner Keyboard = new Scanner (System.in);
 
 		//Command to create a new txt file "population"
-		FileWriter fw = new FileWriter("Population.txt", true);
-		PrintWriter fw = new PrintWriter(fw);
 
 
 		//Variables
@@ -63,7 +61,7 @@ public class Population
 		while (increase < 0);
 		{
 			System.out.println("That number is invalid.");
-			System.print("Please enter a positive number.");
+			System.out.print("Please enter a positive number.");
 			increase = Keyboard.nextDouble();
 		}
 
@@ -75,13 +73,29 @@ public class Population
 			days = Keyboard.nextInt();
 		}
 
+		// Newline
+		System.out.println("");
+
 		//Displays total
-		System.out.printlnf("Day                   Organisms" +
-						   "-------------------------------");
-
-
-		for (int i = 1; i <= days; i++);
+		System.out.println("Day                   Organisms" +
+						   "--------------------------------");
+		for (int x = 1; x <= x; x++);
 		{
+			organisms = organisms*(increase + 1);
+			System.out.print(days+"     "+organisms);
+			System.out.println();
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
 
 
 
