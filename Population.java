@@ -34,8 +34,7 @@ public class Population
 		//Variables
 		double organisms;	//Starting number of organisms
 		double increase;	//Average daily population increase
-		int days;
-		//Number of days they will multiply
+		int days;		//Number of days they will multiply
 
 
 		 //Prompts starting organisms
