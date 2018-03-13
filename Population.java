@@ -1,4 +1,4 @@
-//Nguyen Li
+//
 //Population
 //Feb 26
 
