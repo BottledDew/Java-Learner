@@ -1,4 +1,4 @@
-//
+//Nguyen Li
 //Population
 //Feb 26
 
@@ -18,7 +18,8 @@ Do not accept a number less than 1 for the number of days they will multiply.
 */
 
 import java.util.Scanner;	//Needed for scanner class
-import java.io.*;
+import java.io.*;		//IO
+import java.io.PrintWriter;	//Needed for txt file output
 
 public class Population
 {
@@ -28,12 +29,13 @@ public class Population
 		Scanner Keyboard = new Scanner (System.in);
 
 		//Command to create a new txt file "population"
-
+		PrintWriter Pop = new PrintWriter("Population.txt");
 
 		//Variables
 		double organisms;	//Starting number of organisms
 		double increase;	//Average daily population increase
-		int days;			//Number of days they will multiply
+		int days;
+		//Number of days they will multiply
 
 
 		 //Prompts starting organisms
@@ -77,7 +79,7 @@ public class Population
 		System.out.println("");
 
 		//Displays total
-		System.out.println("Day                   Organisms" +
+		System.out.println("Day                   Organismsn\n" +
 						   "--------------------------------");
 		for (int i = 1; i <= days; i++)
 		{
@@ -85,9 +87,9 @@ public class Population
 			System.out.print(days+"     "+organisms);
 			System.out.println();
 		}
+		Pop.close();
 	}
 }
-
 
 
 
