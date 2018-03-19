@@ -1,0 +1,49 @@
+//
+//Employee class
+//March 19
+
+/**
+Write a class named Employee that has the following fields:
+
+name. the name field references a String object that holds the employee’s name.
+idNumber. The idNumber is an int variable that holds the employee’s ID number.
+department. The department field references a String object that holds the name of the department where the employee works.
+positon. The position field references a String object that holds the employee’s job title.
+The class should have the following constructors:
+
+A constructor that accepts the following values as arguments and assigns them to the appropriate fields: employee’s name, employee’s ID number, department, and position.
+A constructor that accepts the following values as arguments and assigns them to the appropriate fields: employee’s name and ID number. The department and position fields should be assigned an empty string (“”).
+A no-arg constructor that assigns empty strings (“”) to the name, department, and position fields, and 0 to the idNumber field.
+
+import java.util.Scanner;
+import java.io.*;
+
+public class NgL_employeeClass
+   {
+    public static void main(String[] args) throws IOException
+    {
+       //Defines Scanner 
+       Scanner keyboard = new Scanner (System.in);
+       
+      //Variables
+      string nameFirst= "";
+      string nameLast= "";
+      string department;
+      string position;
+      Int idNumber; 
+      
+      System.out.println("Please enter the employee's full name, First Last");
+      input = keyboard.nextline();
+      
+      
+      
+    }
+    
+    public static String fullname(String first, String last)
+    {
+      string name;
+      name = first + " " + last;
+      return name;
+    }
+    
+    public 
