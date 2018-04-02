@@ -1,0 +1,89 @@
+//Nguyen Li
+//Employee Class
+//March 22
+
+import java.util.Scanner;
+import java.io.*;
+
+public class NLi_employeeClass
+{
+	//Variables- private within this class
+	private String name;
+	private int idNum;
+	private String department;
+	private String position;
+
+	//mutator methods
+	public void setName( String nameGiven )
+	{
+		name = nameGiven;
+	}
+
+	public void setidNumber( int idNumberGiven )
+	{
+		idNumber = idNumberGiven;
+	}
+
+	public void setidNumber( String idNumberGiven )
+	{
+		idNumber = Integer.parseInt( idNumberGiven );
+	}
+
+	public void setDepartment( String deparmentGiven )
+	{
+		department = departmentGiven
+	}
+
+	public void setidNumber( int positionGiven )
+	{
+		idNumber = positionGiven
+	}
+
+	public String getName()
+	{
+		return name;
+	}
+
+	public
+
+
+	//public constructors
+	public NLi_employeeClass( String employeeName, int employeeIdnumber, String employeeDepartment, employeePosition )
+	{
+		name = employeeName;
+		idNumber = employeeIdnumber;
+		department = employeeDepartment;
+		position = employeePosition;
+	}
+
+	public NLi_employeeClass( String employeeName, int employeeIdnumber )
+	{
+		name = employeeName;
+		idNumber = employeeIdnumber;
+		department = "";
+		position = "";
+	}
+
+	public NLi_employeeClass()
+	{
+			name = "";
+			idNumber = 0;
+			department = "";
+			position = "";
+	}
+
+
+/*
+Write a class named Employee that has the following fields:
+
+name. the name field references a String object that holds the employee’s name.
+idNumber. The idNumber is an int variable that holds the employee’s ID number.
+department. The department field references a String object that holds the name of the department where the employee works.
+positon. The position field references a String object that holds the employee’s job title.
+The class should have the following constructors:
+
+A constructor that accepts the following values as arguments and assigns them to the appropriate fields: employee’s name, employee’s ID number, department, and position.
+A constructor that accepts the following values as arguments and assigns them to the appropriate fields: employee’s name and ID number. The department and position fields should be assigned an empty string (“”).
+A no-arg constructor that assigns empty strings (“”) to the name, department, and position fields, and 0 to the idNumber field.
+Write the appropriate mutator methods (also called setters) that store values in these fields and accessor methods (getters) that return the values in these fields. Once you have written the class, write a separate program that creates three Employee objects to hold the following data:
+**/
