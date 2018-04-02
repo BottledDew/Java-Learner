@@ -38,8 +38,6 @@ public class NLi_employeeClassTest
 /*
 Once you have written the class, write a separate program that creates three Employee objects to hold the following data:
 
- 
-
 Name                           ID Number                              Department                             Position
 
 Susan Myers                47899                                      Accounting                                Vice President
@@ -48,11 +46,8 @@ Mark Jones                  39119                                      IT       
 
 Joy Rogers                   81774                                     Manufacturing                            Engineer
 
- 
-
-The program should use each of the three constructors (a different one for each case) to build and store this data in three Employee objects, and then display the data for each employee on the screen.
-
- 
+The program should use each of the three constructors (a different one for each case) to build and store this data in three Employee objects,
+and then display the data for each employee on the screen.
 
 Output should look like the following:
 
@@ -67,7 +62,6 @@ Department: Accounting
 Position: Vice President
 
  
-
 Employee #2
 
 Name: Mark Jones
@@ -79,7 +73,6 @@ Department: IT
 Position: Programmer
 
  
-
 Employee #3
 
 Name: Joy Rogers
