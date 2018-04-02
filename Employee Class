@@ -2,8 +2,6 @@
 //Employee Class
 //March 22
 
-import java.util.Scanner;
-import java.io.*;
 
 public class NLi_employeeClass
 {
