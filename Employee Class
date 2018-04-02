@@ -81,7 +81,7 @@ public class NLi_employeeClass
 			department = "";
 			position = "";
 	}
-
+}
 
 /*
 Write a class named Employee that has the following fields:
