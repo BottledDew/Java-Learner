@@ -34,7 +34,7 @@ public class NLi_employeeClass
 		department = departmentGiven;
 	}
 
-	public void setPosition( int positionGiven )
+	public void setPosition( String positionGiven )
 	{
 		idNumber = positionGiven;
 	}
