@@ -1,4 +1,4 @@
-//Nguyen Li
+//
 //Employee Class
 //March 22
 
@@ -9,7 +9,7 @@ public class NLi_employeeClass
 {
 	//Variables- private within this class
 	private String name;
-	private int idNum;
+	private int idNumber;
 	private String department;
 	private String position;
 
@@ -44,7 +44,20 @@ public class NLi_employeeClass
 		return name;
 	}
 
-	public
+	public String getidNumber()
+	{
+		return idNumber;
+	}
+		
+	public String getDepartment()
+	{
+		return department;
+	}
+	
+	public String getPosition()
+	{
+		return position;
+	}
 
 
 	//public constructors
@@ -83,7 +96,61 @@ positon. The position field references a String object that holds the employee�
 The class should have the following constructors:
 
 A constructor that accepts the following values as arguments and assigns them to the appropriate fields: employee’s name, employee’s ID number, department, and position.
-A constructor that accepts the following values as arguments and assigns them to the appropriate fields: employee’s name and ID number. The department and position fields should be assigned an empty string (“”).
+A constructor that accepts the following values as arguments and assigns them to the appropriate fields: employee’s name and ID number. 
+The department and position fields should be assigned an empty string (“”).
 A no-arg constructor that assigns empty strings (“”) to the name, department, and position fields, and 0 to the idNumber field.
-Write the appropriate mutator methods (also called setters) that store values in these fields and accessor methods (getters) that return the values in these fields. Once you have written the class, write a separate program that creates three Employee objects to hold the following data:
+Write the appropriate mutator methods (also called setters) that store values in these fields and accessor methods (getters) that return the values in these fields. 
+Once you have written the class, write a separate program that creates three Employee objects to hold the following data:
+
+ 
+
+Name                           ID Number                              Department                             Position
+
+Susan Myers                47899                                      Accounting                                Vice President
+
+Mark Jones                  39119                                      IT                                             Programmer
+
+Joy Rogers                   81774                                     Manufacturing                            Engineer
+
+ 
+
+The program should use each of the three constructors (a different one for each case) to build and store this data in three Employee objects, and then display the data for each employee on the screen.
+
+ 
+
+Output should look like the following:
+
+Employee #1
+
+Name: Susan Meyers
+
+ID Number: 47899
+
+Department: Accounting
+
+Position: Vice President
+
+ 
+
+Employee #2
+
+Name: Mark Jones
+
+ID Number: 39119
+
+Department: IT
+
+Position: Programmer
+
+ 
+
+Employee #3
+
+Name: Joy Rogers
+
+ID Number: 81774
+
+Department: Manufacturing
+
+Position: Engineer
 **/
