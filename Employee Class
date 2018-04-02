@@ -34,7 +34,7 @@ public class NLi_employeeClass
 
 	public void setPosition( String positionGiven )
 	{
-		idNumber = positionGiven;
+		position = positionGiven;
 	}
 
 	public String getName()
