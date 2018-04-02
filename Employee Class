@@ -29,12 +29,12 @@ public class NLi_employeeClass
 		idNumber = Integer.parseInt( idNumberGiven );
 	}
 
-	public void setDepartment( String deparmentGiven )
+	public void setDepartment( String departmentGiven )
 	{
 		department = departmentGiven;
 	}
 
-	public void setidNumber( int positionGiven )
+	public void setPosition( int positionGiven )
 	{
 		idNumber = positionGiven;
 	}
