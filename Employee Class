@@ -44,7 +44,7 @@ public class NLi_employeeClass
 		return name;
 	}
 
-	public String getidNumber()
+	public int getIdNumber()
 	{
 		return idNumber;
 	}
@@ -58,10 +58,9 @@ public class NLi_employeeClass
 	{
 		return position;
 	}
-
-
+	
 	//public constructors
-	public NLi_employeeClass( String employeeName, int employeeIdnumber, String employeeDepartment, employeePosition )
+	public NLi_employeeClass( String employeeName, int employeeIdnumber, String employeeDepartment, String employeePosition )
 	{
 		name = employeeName;
 		idNumber = employeeIdnumber;
