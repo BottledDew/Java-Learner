@@ -31,12 +31,12 @@ public class NLi_employeeClass
 
 	public void setDepartment( String deparmentGiven )
 	{
-		department = departmentGiven
+		department = departmentGiven;
 	}
 
 	public void setidNumber( int positionGiven )
 	{
-		idNumber = positionGiven
+		idNumber = positionGiven;
 	}
 
 	public String getName()
