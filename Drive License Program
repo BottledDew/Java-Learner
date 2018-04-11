@@ -85,7 +85,7 @@ public class DriverExam
 
 import java.util.Scanner; 
 
-public class NLi
+public class NLi_driverLicense
 {
    public static void main(String[] args)
    {
