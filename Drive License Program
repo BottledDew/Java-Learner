@@ -35,28 +35,24 @@ public class DriverExam
           }
        }
 
-       //Returns a boolean value if correct answers > 15 
        public boolean passed()
        {
-          if (totalCorrect() >= 15)
-             return true; 
-          else
-             return false; 
+            return correct >= 15;
        }
-
-       //Determines the total correct answers
+       
        public int totalCorrect()
        {
-          int correctCount = 0; 
-
-          for (int i = 0; i < correctAnswers.length; i++)
-          {
-             if (userAnswers[i].equalsIgnoreCase(correctAnswers[i]))
-             {
-                correctCount++; 
-             }
-          }
-          return correctCount; 
+            return correct;
+       {
+       
+       public int totalIncorrect()
+       {
+            return incorrect;
+       }
+       
+       public boolean[] questionsMissed()
+       {
+            return missed;
        }
 
        //Determines the total incorrect answers
@@ -89,7 +85,7 @@ public class DriverExam
 
 import java.util.Scanner; 
 
-public class DriverExamApplication
+public class NLi
 {
    public static void main(String[] args)
    {
@@ -118,18 +114,18 @@ public class DriverExamApplication
       DriverExam exam = new DriverExam(answers); 
 
       //Results
-      System.out.println("  RESULTS  "); 
+      System.out.println("  RESULTS  \n"); 
 
       //Outputting total correct
-      System.out.println("Total Correct: " + exam.totalCorrect()); 
+      System.out.println("Correct answers: " + exam.totalCorrect()); 
 
       //Outputting total incorrect
-      System.out.println("Total Incorrect: " + exam.totalIncorrect()); 
+      System.out.println("Incorrect answers: " + exam.totalIncorrect()); 
 
-      String passed = exam.passed() ? "YES" : "NO"; 
+      String passed = exam.passed() ? "passed" : "failed"; 
 
       //Result pass or fail
-      System.out.println("Passed: " + passed); 
+      System.out.println("You have" + passed "the exam"); 
 
       if (exam.totalIncorrect() > 0)
       {
@@ -153,7 +149,7 @@ public class DriverExamApplication
          || "C".equalsIgnoreCase(answer) || 
          "D".equalsIgnoreCase(answer); 
    }
-} //end of Test class
+} //end of class
         
         
         
