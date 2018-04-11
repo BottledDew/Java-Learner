@@ -82,9 +82,6 @@ public class DriverExam
 
    /* The DriverExamApplication class demonstrates the methods of DriverExam class. */
 
-
-import java.util.Scanner; 
-
 public class NLi_driverLicense
 {
    public static void main(String[] args)
