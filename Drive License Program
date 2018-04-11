@@ -2,22 +2,22 @@
 //Driver License
 //April 4
 
-import java.util.Scanner;     
+import java.util.Scanner;   //import scanner
 
 public class DriverExam
     {
-       //An array containing a student's answers
+       //correct answers array
        private String[] correctAnswers = 
                                      {"B", "D", "A", "A", "C", "A", 
                                       "B", "A", "C", "D", 
                                       "B", "C", "D", "A", 
                                       "D", "C", "C", "B", "D", "A"}; 
 
-       //Store the user's answers
+       //stores user answers
        private String[] userAnswers; 
        int[] missed = new int[correctAnswers.length]; 
 
-       //Process the user's answers
+       //process user answers
        public DriverExam (String[] Answers)
        {
           userAnswers = new String[Answers.length]; 
@@ -111,20 +111,20 @@ public class NLi_driverLicense
       //Results
       System.out.println("  RESULTS  "); 
 
-      //Outputting total correct
-      System.out.println("Total Correct: " + exam.totalCorrect()); 
+      //output total correct
+      System.out.println("Correct answers: " + exam.totalCorrect()); 
 
-      //Outputting total incorrect
+      //output total incorrect
       System.out.println("Total Incorrect: " + exam.totalIncorrect()); 
 
-      String passed = exam.passed() ? "YES" : "NO"; 
+      String passed = exam.passed() ? "failed" : "passed"; 
 
       //Result pass or fail
-      System.out.println("Passed: " + passed); 
+      System.out.println("You have " + passed + "the exam."); 
 
       if (exam.totalIncorrect() > 0)
       {
-          System.out.println("The incorrect answers are: "); 
+          System.out.println("Incorrect answers: "); 
 
           int missedIndex; 
 
