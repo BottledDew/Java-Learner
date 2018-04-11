@@ -8,17 +8,17 @@ public class NLi_employeeClassTest
   {
   
     //Objects
-    Employee employee1 = new Employee();
+    NLi_employeeClassTest employee1 = new NLi_employeeClassTest();
     employee1.setName("Susan Meyers");
     employee1.setIdNumber(47899);
     employee1.setDepartment("Accounting");
     employee1.setPosition("Vice President");
     
-    Employee employee2 = new Employee("Mark Jones", 39119);
+    NLi_employeeClassTest employee2 = new NLi_employeeClassTest("Mark Jones", 39119);
     employee2.setDepartment("IT");
     employee2.setPosition("Programmer");
     
-    Employee employee3 = new Employee("Joy Rogers", 81774, "Manufacturing", "Engineer");
+    NLi_employeeClassTest employee3 = new NLi_employeeClassTest("Joy Rogers", 81774, "Manufacturing", "Engineer");
     
     //Displays data
     System.out.println("Name\t\tID Number\t\tDepartment\t\tPosition");
