@@ -4,58 +4,156 @@
 
 import java.util.Scanner //Scanner class
 
-public class NLi_driverLicense
-{
-    public static void main(String[] Args)
+public class DriverExam
     {
-        //Defines processes
-        Scanner keyboard = new Scanner(System.in);
-        DriverExam exam = new DriverExam(answers); 
-        
-        //variables- used once
-        private boolean[] missed;
-        private int correct;
-        private int incorrect;
-        private String[] userAnswers;
-        
-        //Display texts
-        System.out.println("    Driver's License Exam ");
-        System.out.println("  20 Multiple-Choice Questions ");
-        System.out.println("       Mark A, B, C, D   ");
-        
-        //what is this called again?? 
-        for (int i = 0; i < 20; i++)
-        {
-            do
-            {
+       //Correct answers array
+       private String[] correctAnswers = 
+                                     {"B", "D", "A", "A", "C", "A", 
+                                      "B", "A", "C", "D", 
+                                      "B", "C", "D", "A", 
+                                      "D", "C", "C", "B", "D", "A"}; 
+      
+       //variables
+       private boolean[] missed;
+       private int correct;
+       private int incorrect;
+       private String[] userAnswers; 
+                                      
+
+       //Stores user input
+       private String[] userAnswers; 
+       int[] missed = new int[correctAnswers.length]; 
+
+       //Processes input
+       public DriverExam (String[] Answers)
+       {
+          userAnswers = new String[Answers.length]; 
+
+          for (int i = 0; i < Answers.length; i++)
+          {
+             userAnswers[i] = Answers[i]; 
+          }
+       }
+
+       //Returns a boolean value if correct answers > 15 
+       public boolean passed()
+       {
+          if (totalCorrect() >= 15)
+             return true; 
+          else
+             return false; 
+       }
+
+       //Determines the total correct answers
+       public int totalCorrect()
+       {
+          int correctCount = 0; 
+
+          for (int i = 0; i < correctAnswers.length; i++)
+          {
+             if (userAnswers[i].equalsIgnoreCase(correctAnswers[i]))
+             {
+                correctCount++; 
+             }
+          }
+          return correctCount; 
+       }
+
+       //Determines the total incorrect answers
+       public int totalIncorrect()
+       {
+          int incorrectCount = 0; 
+
+          for (int i = 0; i < correctAnswers.length; i++)
+          {
+             if (!userAnswers[i].equalsIgnoreCase(correctAnswers[i]))
+             {
+                missed[incorrectCount] = i; 
+                incorrectCount++; 
+             }
+          }
+          return incorrectCount; 
+       }
+
+       //Missed questions
+       public int[] questionsMissed()
+       {
+          return missed; 
+       }
+
+    }
+    //end of DriverExam class
+
+   /* The DriverExamApplication class demonstrates the methods of DriverExam class. */
+
+
+import java.util.Scanner; 
+
+public class DriverExamApplication
+{
+   public static void main(String[] args)
+   {
+      System.out.println("    Driver's License Exam "); 
+      Scanner input = new Scanner(System.in); 
+
+      System.out.println(" 20 Multiple-Choice Questions "); 
+      System.out.println("       Mark A, B, C, D   "); 
+
+      //Inputting string
+      String[] answers = new String[20]; 
+      String answer; 
+
+      for (int i = 0; i < 20; i++)
+      {
+         do
+         {
             System.out.print((i+1) + ": "); 
             answer = input.nextLine(); 
-            }
-                while (!isValidAnswer(answer));
-                answers[i] = answer;
-        }
+         } while (!isValidAnswer(answer)); 
 
+         answers[i] = answer; 
+      }
 
-//Boolean for if correct answers > 15 
-public boolean passed()
-{
-    return correct >= 15; // don't use if/else when you are using a boolean expression
-}
+      //Process
+      DriverExam exam = new DriverExam(answers); 
 
-public int totalCorrect()
-{
-    return correct;
-}
+      //Results
+      System.out.println("  RESULTS  "); 
 
-public int totalIncorrect()
-{
-    return incorrect;
-}
+      //Outputting total correct
+      System.out.println("Total Correct: " + exam.totalCorrect()); 
 
-public boolean[] questionsMissed()
-{
-    return missed;
-}
+      //Outputting total incorrect
+      System.out.println("Total Incorrect: " + exam.totalIncorrect()); 
+
+      String passed = exam.passed() ? "YES" : "NO"; 
+
+      //Result pass or fail
+      System.out.println("Passed: " + passed); 
+
+      if (exam.totalIncorrect() > 0)
+      {
+          System.out.println("The incorrect answers are: "); 
+
+          int missedIndex; 
+
+          for (int i = 0; i < exam.totalIncorrect(); i++)
+          {
+            missedIndex = exam.questionsMissed()[i]+1; 
+            System.out.print(" " + missedIndex); 
+          }
+      }
+   } //end of main function
+
+   //Returns true when answer is valid
+   public static boolean isValidAnswer (String answer)
+   {
+      return "A".equalsIgnoreCase(answer) || 
+         "B".equalsIgnoreCase(answer)
+         || "C".equalsIgnoreCase(answer) || 
+         "D".equalsIgnoreCase(answer); 
+   }
+} //end of Test class
         
         
         
