@@ -2,29 +2,22 @@
 //Driver License
 //April 4
 
-import java.util.Scanner //Scanner class
+import java.util.Scanner;     
 
 public class DriverExam
     {
-       //Correct answers array
+       //An array containing a student's answers
        private String[] correctAnswers = 
                                      {"B", "D", "A", "A", "C", "A", 
                                       "B", "A", "C", "D", 
                                       "B", "C", "D", "A", 
                                       "D", "C", "C", "B", "D", "A"}; 
-      
-       //variables
-       private boolean[] missed;
-       private int correct;
-       private int incorrect;
-       private String[] userAnswers; 
-                                      
 
-       //Stores user input
+       //Store the user's answers
        private String[] userAnswers; 
        int[] missed = new int[correctAnswers.length]; 
 
-       //Processes input
+       //Process the user's answers
        public DriverExam (String[] Answers)
        {
           userAnswers = new String[Answers.length]; 
@@ -35,24 +28,28 @@ public class DriverExam
           }
        }
 
+       //Returns a boolean value if correct answers > 15 
        public boolean passed()
        {
-            return correct >= 15;
+          if (totalCorrect() >= 15)
+             return true; 
+          else
+             return false; 
        }
-       
+
+       //Determines the total correct answers
        public int totalCorrect()
        {
-            return correct;
-       {
-       
-       public int totalIncorrect()
-       {
-            return incorrect;
-       }
-       
-       public boolean[] questionsMissed()
-       {
-            return missed;
+          int correctCount = 0; 
+
+          for (int i = 0; i < correctAnswers.length; i++)
+          {
+             if (userAnswers[i].equalsIgnoreCase(correctAnswers[i]))
+             {
+                correctCount++; 
+             }
+          }
+          return correctCount; 
        }
 
        //Determines the total incorrect answers
@@ -81,6 +78,7 @@ public class DriverExam
     //end of DriverExam class
 
    /* The DriverExamApplication class demonstrates the methods of DriverExam class. */
+
 
 public class NLi_driverLicense
 {
@@ -111,18 +109,18 @@ public class NLi_driverLicense
       DriverExam exam = new DriverExam(answers); 
 
       //Results
-      System.out.println("  RESULTS  \n"); 
+      System.out.println("  RESULTS  "); 
 
       //Outputting total correct
-      System.out.println("Correct answers: " + exam.totalCorrect()); 
+      System.out.println("Total Correct: " + exam.totalCorrect()); 
 
       //Outputting total incorrect
-      System.out.println("Incorrect answers: " + exam.totalIncorrect()); 
+      System.out.println("Total Incorrect: " + exam.totalIncorrect()); 
 
-      String passed = exam.passed() ? "passed" : "failed"; 
+      String passed = exam.passed() ? "YES" : "NO"; 
 
       //Result pass or fail
-      System.out.println("You have" + passed "the exam"); 
+      System.out.println("Passed: " + passed); 
 
       if (exam.totalIncorrect() > 0)
       {
