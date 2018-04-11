@@ -98,7 +98,7 @@ public class NLi_driverLicense
       {
          do
          {
-            System.out.print((i+1) + ": "); 
+            System.out.println((i+1) + ": "); 
             answer = input.nextLine(); 
          } while (!isValidAnswer(answer)); 
 
@@ -131,7 +131,7 @@ public class NLi_driverLicense
           for (int i = 0; i < exam.totalIncorrect(); i++)
           {
             missedIndex = exam.questionsMissed()[i]+1; 
-            System.out.print(" " + missedIndex); 
+            System.out.println(" " + missedIndex); 
           }
       }
    } //end of main function
