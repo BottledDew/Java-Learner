@@ -73,10 +73,10 @@ public class PhoneBookEntryDemo {
 		ArrayList<PhoneBookEntry> phonebook = new ArrayList<PhoneBookEntry>();
 
 		//The objects
-		PhoneBookEntry bob = new PhoneBookEntry("Bob Jim", "535-4902");
-		PhoneBookEntry john = new PhoneBookEntry("John Smith", "234-2042");
-		PhoneBookEntry jim = new PhoneBookEntry("Jim Joe", "434-392");
-		PhoneBookEntry joe = new PhoneBookEntry("Joe Bob", "420-4926");
+		PhoneBookEntry bob = new PhoneBookEntry("Bob Jim", "123-4567");
+		PhoneBookEntry john = new PhoneBookEntry("John Smith", "987-6543");
+		PhoneBookEntry jim = new PhoneBookEntry("Jim Joe", "321-7654");
+		PhoneBookEntry joe = new PhoneBookEntry("Joe Bob", "420-0666");
 		PhoneBookEntry santa = new PhoneBookEntry("Santa Clause", "444-4444");
 
 		//Adds objects
