@@ -1,0 +1,34 @@
+//Nguyen Li
+//Car Instrument Simulator
+//April 25th
+
+
+
+
+
+
+/**
+ASSIGNMENT:
+For this assignment, you will design two classes that work together to simulate a car's fuel gauge and odometer. 
+The classes you will design are the following:
+
+1. The FuelGauge Class: This class will simulate a fuel gauge. Its responsibilities are:
+
+To know the car's current amount of fuel, in gallons.
+To report the car's current amount of fuel, in gallons.
+To be able to increment the amount of fuel by one gallon. This simulates putting fuel in the car. (The car can hold a maximum of 15 gallons).
+To be able decrement the amount of fuel by one gallon, if the amount of fuel is greater than zero gallons. 
+This simulates burning fuel when the car's engine is running.
+2.  The Odometer Class: This class will simulate the car's odometer. Its responsibilities are:
+
+To know the car's current mileage.
+To report the car's current mileage.
+To be able to increment the current mileage by one mile. the maximum mileage on the odometer is 99,999 miles. 
+When this amount is exceeded, the odometer resets the current mileage to 0.
+To be able to work with the a FuelGauge object. 
+It should decrease the FuelGauage object's current amount of fuel by one gallon for every 24 miles the car has traveled. 
+(This addresses the car's fuel economy is 24 miles per gallon).
+Demonstrate the classes by creating instances of each. 
+Simulate filling the car up with fuel, and then run a loop that increments the odometer until the car runs out of fuel. 
+During each loop iteration, print out the car's mileage and amount of fuel.
+*/
