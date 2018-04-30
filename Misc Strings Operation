@@ -48,7 +48,7 @@ class MiscellaneousString{
      * in the object
      */
 
-     private static int wordCount(String string1) {
+    	static int wordCount(String string1) {
         int number = 0;
 
         for(int i = 0; i < string1.length(); i++) {
@@ -100,7 +100,7 @@ class MiscellaneousString{
      * of string2, it replaces it with string 3.
      */
 
-     private static String replaceSubstring(String string1, String string2, String string3) {
+     static String replaceSubstring(String string1, String string2, String string3) {
      return string1.replaceAll(string2, string3);
     }
 }
