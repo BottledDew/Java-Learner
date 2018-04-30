@@ -1,42 +1,31 @@
-//
+//Nguyen Li
 //Misc Strings Operation
 //April 30
 
 import java.util.Scanner;
 
-public class MiscellanenousString {
+public class NLi_MiscellanenousString {
    public static void main(String[] args) {
     String string1 = "the dog jumped over the fence";
     String string2 = "the";
-    String string3 = "that";
+    String string3 = "that dog jumped over that fence";
     char[] charArray = { 'a', 'b', 'c', 'd', 'e', 'f', 'g',
                         'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p',
                         'q', 'r', 's', 't', 'u', 'v','w', 'x','y', 'z'};
 
     // wordCount method
     int numberOfWords = MiscellaneousString.wordCount(string1);
-    System.out.println("Count the number of words: " + string1);
-    System.out.println("Number of words given string: " + numberOfWords);
-
-    // arrayToString method
-    String character = MiscellaneousString.arrayToString(charArray);
-    System.out.print("\nGiven characters in the array:");
-
-    for(int i = 0; i < charArray.length; i++)
-
-    System.out.print(charArray[i] + " ");
-    System.out.print("\nString from given character array: " + character);
+    System.out.println("Number of words in " + string1);
+    System.out.println("is " + numberOfWords);
 
     // mostFrequent method
-    char mostOccurrence = MiscellaneousString.mostFrequent(string1);
-    System.out.println("\nGiven string to get the most occured characters: " + string1);
-    System.out.println("The most occured character in given string: " + mostOccurrence);
+    char mostFrequent = MiscellaneousString.mostFrequent(string1);
+    System.out.println("Most frequently occuring character: " + mostFrequent);
 
     //replaceSustring method
     String string = MiscellaneousString.replaceSubstring(string1, string2, string3);
-    System.out.println("\nGiven string to modify: " + string1);
-    System.out.println("Replace for: " +string2);
-    System.out.println("After replacing, the new string: " + string);
+    System.out.println(string3);
+    System.out.println("How now brown cow");
   }
 }
 
@@ -75,7 +64,7 @@ class MiscellaneousString{
        */
 
        static char mostFrequent(String string1) {
-           char mostOccurrence = ' ';
+           char mostFrequent = ' ';
            int most = 0;
            int j;
            for(int i = 0; i < string1.length(); i++) {
@@ -88,11 +77,11 @@ class MiscellaneousString{
 
                if(count >= most) {
                    most = count;
-                   mostOccurrence = ch;
+                   mostFrequent = ch;
                 }
             }
 
-            return mostOccurrence;
+            return mostFrequent;
         }
 
     /* method accepts three references to string object as arguments.
