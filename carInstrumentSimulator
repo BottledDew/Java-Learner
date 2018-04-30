@@ -2,7 +2,123 @@
 //Car Instrument Simulator
 //April 25th
 
+public class NLi_CarInstrumentSimulator 
+{
+	class FuelGauge 
+  {
+    final static int MAXIMUM_GALLONS = 15;
+		private int gallons;
 
+		public FuelGauge() 
+    {
+			gallons = 0;
+		}
+
+		public FuelGauge(int gallons) 
+    {
+			if (gallons <= MAXIMUM_GALLONS) {
+				this.gallons = gallons;
+			} else {
+				gallons = MAXIMUM_GALLONS;
+			}
+		}
+
+		public int getGallons() 
+    {
+			return gallons;
+		}
+
+    //Adds a galleon, displays message if full
+		public void addGallons() 
+    {
+			if (gallons < MAXIMUM_GALLONS) 
+      {
+				gallons++;
+			} 
+        else 
+      {
+				System.out.println("Tank is full!");
+			}
+		}
+
+    //fuel reduce by 1, display message if tank is empty
+		public void burnFuel() 
+    {
+			if (gallons > 0) 
+      {
+				gallons--;
+			} else {
+				System.out.println("Out of fuel!");
+			}
+		}
+	}
+
+	class Odometer 
+  {
+		//variables
+		public final int MAXIMUM_MILEAGE = 999999;
+		public final int MPG = 24;
+		private int initialMileage;
+		private int mileage;
+		private FuelGauge fuelGauge;
+
+		public Odometer(int mileage, FuelGauge fuelGauge) 
+    {
+			this.initialMileage = mileage;
+			this.mileage = mileage;
+			this.fuelGauge = fuelGauge;
+		}
+
+		public int getMileage() 
+    {
+			return mileage;
+		}
+    //mileage
+		public void addMileage() 
+    {
+			if (mileage < MAXIMUM_MILEAGE) 
+      {
+				mileage++;
+			} else {
+				mileage = 0;
+			}
+			int driven = initialMileage - mileage;
+			if (driven % MPG == 0) 
+      {
+				fuelGauge.burnFuel();
+			}
+		}
+	}
+
+	public static void main(String[] args) 
+  {
+  
+		NLi_CarInstrumentSimulator carInstrumentSimulator = new NLi_CarInstrumentSimulator();
+    
+		FuelGauge fuel = carInstrumentSimulator.new FuelGauge();
+    
+		Odometer odometer = carInstrumentSimulator.new Odometer(0, fuel);
+
+		for (int x = 0; x < FuelGauge.MAXIMUM_GALLONS; x++) 
+    {
+			fuel.addGallons();
+		}
+
+		  //empty tank
+		  while (fuel.getGallons() > 0) {
+
+		  //miles driven
+			odometer.addMileage();
+
+			// Display mileage
+			System.out.println("Mileage: " + odometer.getMileage());
+
+			// Display the fuel
+			System.out.println("Fuel level: " + fuel.getGallons() + " gallons");
+			System.out.println("------------------------------");
+		}
+	}
+}
 
 
 
