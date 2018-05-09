@@ -1,0 +1,28 @@
+//Nguyen Li
+//Shift Supervisor Class
+//May 9th
+
+
+
+
+
+/**
+ASSIGNMENT
+
+Design a class named Employee. this class should keep the following information in fields:
+
+Employee name
+Employee number in the format XXX-L, where each X is a digit within the range 0-9 and the L is a letter within the range A-M.
+Hire date
+Write one or more constructors and appropriate accessor and mutator methods for the class.
+
+A shift supervisor is a salaried employee who supervises a shift. 
+In addition to salary, the shift supervisor earns a yearly bonus when his or her shift meets the production goals. 
+Design a ShiftSupervisor class that extends the Employee class you created above. 
+The ShiftSupervisor class should have a field that holds the annual salary and a field that holds the annual production bonus 
+-that the shift supervisor has earned. 
+Write one or more constructors and the appropriate accessor (getters) and mutator (setters) methods for the class.
+
+Demonstrate the class by writing a program that uses a ShiftSupervisor object. 
+Make sure to process two supervisors. 
+One is built with the full argument constructor and the second with the no-argument constructor. 
