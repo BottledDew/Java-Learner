@@ -2,6 +2,7 @@
 //Shift Supervisor Class
 //May 9th
 
+
 public class Employee 
 {
   // private variables
@@ -65,18 +66,8 @@ public class Employee
   }
 }
 
-/**
- *
- * Assignment 7 - Part 2 - 11/28/2011
- *
- * This class is a subclass of the Employee superclass.
- * It extends the Employee class by adding fields and methods that
- * are specific to a Shift Supervisor, which is a kind of employee.
- *
- * @author Dominic Giglio, CSC 210 Sec 121
- *
- */
 
+//Extend Class
 public class ShiftSupervisor extends Employee 
 {
 
@@ -137,253 +128,14 @@ public class ShiftSupervisor extends Employee
 
 }
 
-/**
- *
- * Assignment 7 - Part 1 - 11/28/2011
- *
- * This class is a subclass of the Employee superclass.
- * It extends the Employee class by adding fields and methods that
- * are specific to a Production Worker, which is a kind of employee.
- *
- * @author Dominic Giglio, CSC 210 Sec 121
- *
- */
 
-public class ProductionWorker extends Employee {
-  
-  // private fields
-  private int shift;
-  private double hourlyPayRate;
-
-  // public methods
-
-  /**
-   * Default constructor.
-   * This constructor sets the name, number and hire date for an Employee.
-   * Then it sets up the specific fields for a ProductionWorker.
-   * @param name The employee's name
-   * @param number The employee's number
-   * @param hireDate The date the employee was hired
-   * @param shift The shift the employee works
-   * @param payRate How much the employee is paid per hour
-   */
-  public ProductionWorker(String name, String number, String hireDate, int shift, double payRate) {
-    super(name, number, hireDate);
-    this.shift = shift;
-    this.hourlyPayRate = payRate;
-  }
-
-  /**
-   * Copy constructor.
-   * This constructor will create a new ProductionWorker by copying another.
-   * @param pw An existing ProductionWorker object
-   */
-  public ProductionWorker(ProductionWorker pw) {
-    super(pw.getName(), pw.getNumber(), pw.getHireDate());
-    this.shift = pw.getShift();
-    this.hourlyPayRate = pw.getPayRate();
-  }
-
-  /**
-   * Shift accessor (getter)
-   * @return the value of the shift field
-   */
-  public int getShift() {
-    return shift;
-  }
-
-  /**
-   * Shift mutator (setter)
-   * @param newShift new value for the shift field
-   */
-  public void setShift(int newShift) {
-    this.shift = newShift;
-  }
-
-  /**
-   * Hourly Pay Rate accessor (getter)
-   * @return the value of the hourlyPayRate field
-   */
-  public double getPayRate() {
-    return hourlyPayRate;
-  }
-
-  /**
-   * Hourly Pay Rate mutator (setter)
-   * @param newPayRate new value for the hourlyPayRate field
-   */
-  public void setPayRate(double newPayRate) {
-    this.hourlyPayRate = newPayRate;
-  }
-
-  /**
-   * To String Method.
-   * This method will print a nicely formatted string representation of the
-   * class' fields
-   */
-  public String toString() {
-    String str = super.toString();
-    str += "\nEmployee Shift: " + shift +
-           "\nEmployee Hourly Pay Rate: " + hourlyPayRate;
-    return str;
-  }
-
-}
-
-/**
- *
- * Assignment 7 - Part 4 - 11/28/2011
- *
- * This class is a subclass of the ProductionWorker superclass.
- * It extends the ProductionWorker class by adding fields and methods that
- * are specific to a Team Leader, which is a kind of employee.
- *
- * @author Dominic Giglio, CSC 210 Sec 121
- *
- */
-
-public class TeamLeader extends ProductionWorker {
-
-  // private fields
-  private double monthlyBonus;
-  private double requiredTrainingHours;
-  private double completedTrainingHours;
-
-  // public methods
-
-  /**
-   * Default constructor.
-   * This constructor sets the name, number and hire date for an Employee.
-   * It also sets the shift and hourly pay rate for a Production Worker.
-   * And finally sets it's own bonus and training hours fields.
-   * @param name The employee's name
-   * @param number The employee's number
-   * @param hireDate The date the employee was hired
-   * @param shift The shift the employee works
-   * @param payRate How much the employee is paid per hour
-   * @param monthlyBonus The employee's monthly bonus
-   * @param rth The employee's required training hours
-   * @param cth The employee's completed training hours
-   */
-  public TeamLeader(String name, String number, String hireDate, int shift, double payRate, double monthlyBonus, double rth, double cth) {
-    super(name, number, hireDate, shift, payRate);
-    this.monthlyBonus = monthlyBonus;
-    this.requiredTrainingHours = rth;
-    this.completedTrainingHours = cth;
-  }
-
-  /**
-   * Copy constructor.
-   * This constructor will create a new TeamLeader by copying another.
-   * @param tl An existing TeamLeader object
-   */
-  public TeamLeader(TeamLeader tl) {
-    super(tl.getName(), tl.getNumber(), tl.getHireDate(), tl.getShift(), tl.getPayRate());
-    this.monthlyBonus = tl.getMonthlyBonus();
-    this.requiredTrainingHours = tl.getRequiredTrainingHours();
-    this.completedTrainingHours = tl.getCompletedTrainingHours();
-  }
-
-  /**
-   * Monthly Bonus accessor (getter)
-   * @return the value of the monthlyBonus field
-   */
-  public double getMonthlyBonus() {
-    return monthlyBonus;
-  }
-
-  /**
-   * Monthly Bonus mutator (setter)
-   * @param newBonus new value for the monthlyBonus field
-   */
-  public void setMonthlyBonus(double bonus) {
-    this.monthlyBonus = bonus;
-  }
-
-  /**
-   * Required Training Hours accessor (getter)
-   * @return the value of the requiredTrainingHours field
-   */
-  public double getRequiredTrainingHours() {
-    return requiredTrainingHours;
-  }
-
-  /**
-   * Required Training Hours mutator (setter)
-   * @param hours new value for the requiredTrainingHours field
-   */
-  public void setRequiredTrainingHours(double hours) {
-    this.requiredTrainingHours = hours;
-  }
-
-  /**
-   * Completed Training Hours accessor (getter)
-   * @return the value of the completedTrainingHours field
-   */
-  public double getCompletedTrainingHours() {
-    return completedTrainingHours;
-  }
-
-  /**
-   * Completed Training Hours mutator (setter)
-   * @param hours new value for the completedTrainingHours field
-   */
-  public void setCompletedTrainingHours(double hours) {
-    this.completedTrainingHours = hours;
-  }
-
-  /**
-   * To String Method.
-   * This method will print a nicely formatted string representation of the
-   * class' fields
-   */
-  public String toString() {
-    String str = super.toString();
-    str += "\nEmployee Monthly Bonus: " + monthlyBonus +
-           "\nEmployee Required Training Hours: " + requiredTrainingHours +
-           "\nEmployee Completed Training Hours: " + completedTrainingHours;
-    return str;
-  }
-
-}
-
-/**
- *
- * Assignment 7 - 11/28/2011
- *
- * This program tests all the functionality of the various Employee subclasses.
- *
- * @author Dominic Giglio, CSC 210 Sec 121
- *
- */
-
-public class EmployeeDemo {
-
-  public static void main(String[] args) {
-  
-    // create a new basic employee object
-    Employee ee = new Employee("Dominic Giglio", "123-A", "11/25/2011");
-
-    // print out the basic employee object
-    System.out.println("\nThis is a basic employee object: ");
-    System.out.println(ee);
-
-    // create a Production Worker object
-    ProductionWorker pw1 = new ProductionWorker("Michael Giglio", "456-B", "11/24/2011", 2, 30.00);
-
-    // create a copy of the first Production Worker object
-    ProductionWorker pw2 = new ProductionWorker(pw1);
-
-    // print out the first Production Worker object
-    System.out.println("\nThis is the first Production Worker object: ");
-    System.out.println(pw1);
-
-    // print out the second Production Worker object
-    System.out.println("\nThis is the second Production Worker object: ");
-    System.out.println(pw2);
-
+//Demo class
+public class EmployeeDemo 
+{
+  public static void main(String[] args) 
+  {
     // create a Shift Supervisor object
-    ShiftSupervisor ss1 = new ShiftSupervisor("John Proodian", "789-C", "11/20/2011", 12000, 3000);
+    ShiftSupervisor ss1 = new ShiftSupervisor("John Smith", "123-A", "11/15/2005", 12000, 3000);
 
     // create a copy of the first Shift Supervisor object
     ShiftSupervisor ss2 = new ShiftSupervisor(ss1);
@@ -396,19 +148,6 @@ public class EmployeeDemo {
     System.out.println("\nThis is the second Shift Supervisor object: ");
     System.out.println(ss2);
 
-    // create a Team Leader object
-    TeamLeader tl1 = new TeamLeader("Katie Proodian", "987-D", "11/10/2011", 1, 15.00, 1500, 100, 50);
-
-    // create a copy of the first Team Leader object
-    TeamLeader tl2 = new TeamLeader(tl1);
-
-    // print out the first Team Leader object
-    System.out.println("\nThis is the first Team Leader object: ");
-    System.out.println(tl1);
-
-    // print out the second Team Leader object
-    System.out.println("\nThis is the second Team Leader object: ");
-    System.out.println(tl2);
 
   } // end main() method
 
@@ -437,3 +176,4 @@ Write one or more constructors and the appropriate accessor (getters) and mutato
 Demonstrate the class by writing a program that uses a ShiftSupervisor object. 
 Make sure to process two supervisors. 
 One is built with the full argument constructor and the second with the no-argument constructor. 
+*/
