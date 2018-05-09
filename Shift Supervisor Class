@@ -1,4 +1,4 @@
-//Nguyen Li
+//
 //Shift Supervisor Class
 //May 9th
 
@@ -130,7 +130,7 @@ public class ShiftSupervisor extends Employee
 
 
 //Demo class
-public class EmployeeDemo 
+public class NLi_employeeDemo 
 {
   public static void main(String[] args) 
   {
