@@ -65,21 +65,21 @@ public class Employee
     return str;
   }
   
-    public ShiftSupervisor (String employeeName, String employeeNumber, String employeehireDate)
+    public Employee (String employeeName, String employeeNumber, String employeehireWhen)
   {
     name = employeeName;
     number = employeeNumber;
     hireDate = employeehireDate;
   }
   
-  public ShiftSupervisor (String employeeName, String employeeNumber, String employeehireDate)
+  public Employee (String employeeName, String employeeNumber, String employeehireWhen)
   {
     name = "";
     number = "";
     hireDate = "";
   }
   
-  public ShiftSupervisor ()
+  public Employee ()
   {
     name = "";
     number = "";
@@ -147,19 +147,19 @@ public class ShiftSupervisor extends Employee
     return str;
   }
   
-  public ShiftSupervisor (double annualSal, double prodBonus)
+  public Employee (double annualSal, double prodBonus)
   {
     annualSalary = annualSal;
     productionBonus = prodBonus;
   }
   
-  public ShiftSupervisor (double annualSal, double prodBonus)
+  public Employee (double annualSal, double prodBonus)
   {
     annualSalary = "";
     productionBonus = "";
   }
   
-  public ShiftSupervisor ()
+  public Employee ()
   {
     annualSalary = 0;
     productionBonus = 0;
