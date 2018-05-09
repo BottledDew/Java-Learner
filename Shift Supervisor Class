@@ -64,6 +64,27 @@ public class Employee
                  "\nEmployee Hire Date: " + hireDate;
     return str;
   }
+  
+    public ShiftSupervisor (String employeeName, String employeeNumber, String employeehireDate)
+  {
+    name = employeeName;
+    number = employeeNumber;
+    hireDate = employeehireDate;
+  }
+  
+  public ShiftSupervisor (String employeeName, String employeeNumber, String employeehireDate)
+  {
+    name = "";
+    number = "";
+    hireDate = "";
+  }
+  
+  public ShiftSupervisor ()
+  {
+    name = "";
+    number = "";
+    hireDate = "";
+  }
 }
 
 
@@ -125,7 +146,24 @@ public class ShiftSupervisor extends Employee
            "\nProduction Bonus: $" + productionBonus;
     return str;
   }
-
+  
+  public ShiftSupervisor (double annualSal, double prodBonus)
+  {
+    annualSalary = annualSal;
+    productionBonus = prodBonus;
+  }
+  
+  public ShiftSupervisor (double annualSal, double prodBonus)
+  {
+    annualSalary = "";
+    productionBonus = "";
+  }
+  
+  public ShiftSupervisor ()
+  {
+    annualSalary = 0;
+    productionBonus = 0;
+  }
 }
 
 
@@ -137,7 +175,15 @@ public class NLi_employeeDemo
     // create a Shift Supervisor object
     ShiftSupervisor ss1 = new ShiftSupervisor("John Smith", "123-A", "11-15-2005", 48000, 6500);
     
-    ShiftSupervisor ss2 = new ShiftSupervisor("Joan Jones", "222-L", "12-12-2005", 55000, 8000);
+    ShiftSupervisor ss2 = new ShiftSupervisor();
+    ss2.setname("Joan Jones");
+    ss2.setnumber("222-L");
+    ss2.sethireDate("12-12-2005");
+    ss2.setannualSalary(55000);
+    ss2.setproductionBonus(8000);
+    
+    System.out.println( ss2.getname() + "\n" + ss2.getnumber() + "\n" + ss2.gethireDate +
+    "\n" + ss2.getannualsalary() + "\n" + ss2.getproductionBonus() );
 
     // print out the first Shift Supervisor object
     System.out.println("\nThis is the first Shift Supervisor object: ");
