@@ -73,7 +73,7 @@ public class ShiftSupervisor extends Employee
 
   // private fields
   private double annualSalary;
-  private double annualBonus;
+  private double productionBonus;
 
   // public methods
 
