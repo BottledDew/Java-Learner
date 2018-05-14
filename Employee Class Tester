@@ -1,3 +1,4 @@
+
 //
 //Employee Class Test/Program #2
 //March 22
@@ -6,30 +7,29 @@ public class NLi_employeeClassTest
 {
   public static void main(String[] Args)
   {
-  
     //Objects
-    NLi_employeeClassTest employee1 = new NLi_employeeClassTest();
+    NLi_employeeClass employee1 = new NLi_employeeClass();
     employee1.setName("Susan Meyers");
-    employee1.setIdNumber(47899);
+    employee1.setidNumber(47899);
     employee1.setDepartment("Accounting");
     employee1.setPosition("Vice President");
     
-    NLi_employeeClassTest employee2 = new NLi_employeeClassTest("Mark Jones", 39119);
+    NLi_employeeClass employee2 = new NLi_employeeClass("Mark Jones", 39119);
     employee2.setDepartment("IT");
     employee2.setPosition("Programmer");
     
-    NLi_employeeClassTest employee3 = new NLi_employeeClassTest("Joy Rogers", 81774, "Manufacturing", "Engineer");
+    NLi_employeeClass employee3 = new NLi_employeeClass("Joy Rogers", 81774, "Manufacturing", "Engineer");
     
     //Displays data
     System.out.println("Name\t\tID Number\t\tDepartment\t\tPosition");
     
-    System.out.println( employee1.getName() + "\t" + employee1.getIdNumber() + "\t\t\t" + employee1.getDepartment +
+    System.out.println( employee1.getName() + "\t" + employee1.getIdNumber() + "\t\t\t" + employee1.getDepartment() +
     "\t\t" + employee1.getPosition() );
     
-    System.out.println( employee2.getName() + "\t" + employee2.getIdNumber() + "\t\t\t" + employee2.getDepartment +
+    System.out.println( employee2.getName() + "\t" + employee2.getIdNumber() + "\t\t\t" + employee2.getDepartment() +
     "\t\t" + employee2.getPosition() );
     
-    System.out.println( employee3.getName() + "\t" + employee3.getIdNumber() + "\t\t\t" + employee3.getDepartment +
+    System.out.println( employee3.getName() + "\t" + employee3.getIdNumber() + "\t\t\t" + employee3.getDepartment() +
     "\t\t" + employee3.getPosition() );
     
    }
