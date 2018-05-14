@@ -3,7 +3,7 @@
 //May 9th
 
 
-public class Employee 
+public class Employee
 {
   // private variables
   private String name;
@@ -11,9 +11,9 @@ public class Employee
   private String hireDate;
 
   // public methods
-  
+
   //constructor sets the name, number and hire date for an employee
-  public Employee(String name, String number, String hireDate) 
+  public Employee(String name, String number, String hireDate)
   {
     this.name = new String(name);
     this.number = new String(number);
@@ -21,75 +21,54 @@ public class Employee
   }
 
   //Name accessor (getter)
-  public String getName() 
+  public String getName()
   {
     return name;
   }
 
   //Name mutator (setter)
-  public void setName(String name) 
+  public void setName(String name)
   {
     this.name = name;
   }
 
   //Number accessor (getter)
-  public String getNumber() 
+  public String getNumber()
   {
     return number;
   }
 
   // Number mutator (setter)
-  public void setNumber(String number) 
+  public void setNumber(String number)
   {
     this.number = number;
   }
 
   //Hire Date accessor (getter)
-  public String getHireDate() 
+  public String getHireDate()
   {
     return hireDate;
   }
 
   //Hire Date mutator (setter)
-  public void setHireDate(String hireDate) 
+  public void setHireDate(String hireDate)
   {
     this.hireDate = hireDate;
   }
 
   //To String Method. Name, numb, hire date
-  public String toString() 
+  public String toString()
   {
     String str = "Name: " + name +
                  "\nEmployee Number: " + number +
                  "\nEmployee Hire Date: " + hireDate;
     return str;
   }
-  
-    public Employee (String employeeName, String employeeNumber, String employeehireWhen)
-  {
-    name = employeeName;
-    number = employeeNumber;
-    hireDate = employeehireDate;
-  }
-  
-  public Employee (String employeeName, String employeeNumber, String employeehireWhen)
-  {
-    name = "";
-    number = "";
-    hireDate = "";
-  }
-  
-  public Employee ()
-  {
-    name = "";
-    number = "";
-    hireDate = "";
-  }
 }
 
 
 //Extend Class
-public class ShiftSupervisor extends Employee 
+public class ShiftSupervisor extends Employee
 {
 
   // private fields
@@ -99,7 +78,7 @@ public class ShiftSupervisor extends Employee
   // public methods
 
   //constructor sets the name, number and hire date for an Employee.
-  public ShiftSupervisor(String name, String number, String hireDate, double salary, double bonus) 
+  public ShiftSupervisor(String name, String number, String hireDate, double salary, double bonus)
   {
     super(name, number, hireDate);
     this.annualSalary = salary;
@@ -107,7 +86,7 @@ public class ShiftSupervisor extends Employee
   }
 
   //Copy constructor.
-  public ShiftSupervisor(ShiftSupervisor ss) 
+  public ShiftSupervisor(ShiftSupervisor ss)
   {
     super(ss.getName(), ss.getNumber(), ss.getHireDate());
     this.annualSalary  = ss.getAnnualSalary();
@@ -115,75 +94,57 @@ public class ShiftSupervisor extends Employee
   }
 
   //Annual Salary accessor (getter)
-  public double getAnnualSalary() 
+  public double getAnnualSalary()
   {
     return annualSalary;
   }
 
   //Annual Salary mutator (setter)
-  public void setAnnualSalary(double newSalary) 
+  public void setAnnualSalary(double newSalary)
   {
     this.annualSalary = newSalary;
   }
 
   //Production Bonus accessor (getter)
-  public double getProductionBonus() 
+  public double getProductionBonus()
   {
     return productionBonus;
   }
 
   //Production Bonus mutator (setter)
-  public void setproductionBonus(double newBonus) 
+  public void setproductionBonus(double newBonus)
   {
     this.productionBonus = newBonus;
   }
 
   //To String Method. Salary, production bonus
-  public String toString() 
+  public String toString()
   {
     String str = super.toString();
     str += "\nAnnual Salary: $" + annualSalary +
            "\nProduction Bonus: $" + productionBonus;
     return str;
   }
-  
-  public Employee (double annualSal, double prodBonus)
-  {
-    annualSalary = annualSal;
-    productionBonus = prodBonus;
-  }
-  
-  public Employee (double annualSal, double prodBonus)
-  {
-    annualSalary = "";
-    productionBonus = "";
-  }
-  
-  public Employee ()
-  {
-    annualSalary = 0;
-    productionBonus = 0;
-  }
 }
 
 
 //Demo class
-public class NLi_employeeDemo 
+public class NLi_Employee
 {
-  public static void main(String[] args) 
+  public static void main(String[] args)
   {
     // create a Shift Supervisor object
     ShiftSupervisor ss1 = new ShiftSupervisor("John Smith", "123-A", "11-15-2005", 48000, 6500);
-    
+
     ShiftSupervisor ss2 = new ShiftSupervisor();
-    ss2.setname("Joan Jones");
-    ss2.setnumber("222-L");
-    ss2.sethireDate("12-12-2005");
-    ss2.setannualSalary(55000);
+    ss2.setName("Joan Jones");
+    ss2.setNumber("222-L");
+    ss2.setHireDate("12-12-2005");
+    ss2.setAnnualSalary(55000);
     ss2.setproductionBonus(8000);
-    
-    System.out.println( ss2.getname() + "\n" + ss2.getnumber() + "\n" + ss2.gethireDate +
-    "\n" + ss2.getannualsalary() + "\n" + ss2.getproductionBonus() );
+
+    System.out.println( ss2.getName() + "\n" + ss2.getNumber() + "\n" + ss2.getHireDate() +
+    "\n" + ss2.getAnnualSalary() + "\n" + ss2.getProductionBonus() );
 
     // print out the first Shift Supervisor object
     System.out.println("\nThis is the first Shift Supervisor object: ");
@@ -211,14 +172,14 @@ Employee number in the format XXX-L, where each X is a digit within the range 0-
 Hire date
 Write one or more constructors and appropriate accessor and mutator methods for the class.
 
-A shift supervisor is a salaried employee who supervises a shift. 
-In addition to salary, the shift supervisor earns a yearly bonus when his or her shift meets the production goals. 
-Design a ShiftSupervisor class that extends the Employee class you created above. 
-The ShiftSupervisor class should have a field that holds the annual salary and a field that holds the annual production bonus 
--that the shift supervisor has earned. 
+A shift supervisor is a salaried employee who supervises a shift.
+In addition to salary, the shift supervisor earns a yearly bonus when his or her shift meets the production goals.
+Design a ShiftSupervisor class that extends the Employee class you created above.
+The ShiftSupervisor class should have a field that holds the annual salary and a field that holds the annual production bonus
+-that the shift supervisor has earned.
 Write one or more constructors and the appropriate accessor (getters) and mutator (setters) methods for the class.
 
-Demonstrate the class by writing a program that uses a ShiftSupervisor object. 
-Make sure to process two supervisors. 
-One is built with the full argument constructor and the second with the no-argument constructor. 
+Demonstrate the class by writing a program that uses a ShiftSupervisor object.
+Make sure to process two supervisors.
+One is built with the full argument constructor and the second with the no-argument constructor.
 */
