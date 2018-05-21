@@ -11,7 +11,7 @@ public class Employee
   private String hireDate;
 
   // public methods
-
+  
   //constructor sets the name, number and hire date for an employee
   public Employee(String name, String number, String hireDate)
   {
@@ -76,6 +76,10 @@ public class ShiftSupervisor extends Employee
   private double productionBonus;
 
   // public methods
+  public ShiftSupervisor()
+  {
+    this("","","", 0, 0);
+  }
 
   //constructor sets the name, number and hire date for an Employee.
   public ShiftSupervisor(String name, String number, String hireDate, double salary, double bonus)
