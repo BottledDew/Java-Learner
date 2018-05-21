@@ -1,0 +1,26 @@
+//Nguyen Li
+//CourseGrades Demo
+//May 21
+
+
+public class CourseGradesDemo
+{
+	public static void main(String[] args)
+	{
+		CourseGrades g = new CourseGrades();
+		GradedActivity a = new GradedActivity();
+		a.setScore(90);
+		PassFailExam p = new PassFailExam(10, 3, 70);
+		GradedActivity2 e = new GradedActivity2();
+		e.setScore(80);
+		FinalExam f = new FinalExam(50, 2);
+		
+		
+		g.setLab(a);
+		g.setPassFailExam(p);
+		g.setEssay(e);
+		g.setFinalExam(f);
+		
+		System.out.println(g.toString());
+	}
+}
