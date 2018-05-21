@@ -1,5 +1,5 @@
 //
-//Test Scores Class
+//Test Scores
 //May 21
 
 import java.util.Scanner;
@@ -7,65 +7,69 @@ import java.io.*;
 
 public class TestScores
 {
-	public static void main(String[]args)
+	private int[] _scores;
+	private int _avg;
+
+	//array
+	public TestScores(int[] scores)   throws IllegalArgumentException
+	{    		
+		_avg = validateScoresCreateAverage(scores);
+		_scores = scores;
+	}
+
+	//Tests and returns array < 0, > 100
+	private int validateScoresCreateAverage(int[] scores)
 	{
-		int numTests = 0;
-		double[] grade = new double[numTests];
-		double totGrades = 0;
-		double average;
-		
-		//Scanner variable
-		Scanner keyboard = new Scanner(System.in);
-		
-		//Asks input
-		System.out.print("How many tests do you have? ");
-		numTests = keyboard.nextInt();
-		
-		grade = new double[(int) numTests];
-	
-		for (int index = 0; index < grade.length; index++)
+		int avg = 0;
+		for(int i =0; i < scores.length; i++)
 		{
-			System.out.print("Enter grade for Test " + (index + 1) + ": ");
-			grade[index] = keyboard.nextDouble();	
-			
-			if (grade[index] < 0 || grade[index]> 100)
-			{
-				try {
-					throw new InvalidTestScore();
-				} catch (InvalidTestScore e) 
-				{
-					e.printStackTrace();
-				}
-			}
+			if(scores[i] < 0 || scores[i] > 100)
+				throw new IllegalArgumentException("Invalid number used for test score");
+			avg += scores[i];
 		}
-		for (int index = 0; index < grade.length; index++)
-		{
-			totGrades += grade[index];
-		}
-		average = totGrades/grade.length;
-		System.out.print("The average is: " + average);	
+        return (avg / scores.length);
+	}
+
+	//getter method for demo
+	public int getAverage()
+	{
+		return _avg;
 	}
 }
 
-//Interface
-public class InvalidTestScore extends Exception
+//prompts and makes arrays
+public class TestScoresDemo
 {
-	public InvalidTestScore()
+	public static void main(String[] args)
 	{
-		super ("Invalid number used for test score");
+		int[] scoresArray = getArray(getIntInput("How many tests would you like to enter?"));
+		try
+		{
+			TestScores theseScores = new TestScores(scoresArray);
+			System.out.println("\nAverage score for test: " + theseScores.getAverage());
+		}
+		catch (IllegalArgumentException e)
+		{
+			System.out.println("Invalid test score.\nTry again" + e.getMessage());
+		}
+	}
+
+	//prompts input and stores in array
+	public static int[] getArray(int intIn)
+	{
+		int[] scores = new int[intIn];
+		for (int i = 0; i < scores.length; i++)
+		{
+			scores[i] = getIntInput("Enter score for test #" + (i+1));
+		}
+		return scores;
+	}
+
+	//interface
+	public static int getIntInput(String stringIn)
+	{
+		Scanner keyboard = new Scanner(System.in);
+		System.out.println(stringIn);
+		return keyboard.nextInt();
 	}
 }
-
-/**ASSIGNMENT:
-Write a class named TestScores. 
-The class constructor should accept an array of test scores as its argument. 
-The class should have a method that returns the average of the test scores. 
-If any test score in the array is negative or greater than 100, the class should throw an IllegalArgumentException. 
-Demonstrate the class in a program.
------
-Sample Output:
-Invalid score found.
-Element: 3 Score: 101.0
-The average of the good scores is 90.24
-Press any key to continue . . .
-*/
