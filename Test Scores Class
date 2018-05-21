@@ -14,16 +14,15 @@ public class TestScores
 		double totGrades = 0;
 		double average;
 		
-		
-		
+		//Scanner variable
 		Scanner keyboard = new Scanner(System.in);
 		
+		//Asks input
 		System.out.print("How many tests do you have? ");
 		numTests = keyboard.nextInt();
 		
 		grade = new double[(int) numTests];
-		
-		
+	
 		for (int index = 0; index < grade.length; index++)
 		{
 			System.out.print("Enter grade for Test " + (index + 1) + ": ");
@@ -39,20 +38,16 @@ public class TestScores
 				}
 			}
 		}
-		
 		for (int index = 0; index < grade.length; index++)
 		{
 			totGrades += grade[index];
 		}
-		
 		average = totGrades/grade.length;
-		
-		System.out.print("The average is: " + average);
-		
-		
+		System.out.print("The average is: " + average);	
 	}
 }
 
+//Interface
 public class InvalidTestScore extends Exception
 {
 	public InvalidTestScore()
