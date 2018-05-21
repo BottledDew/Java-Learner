@@ -55,3 +55,17 @@ public class InvalidTestScore extends Exception
 		super ("Invalid number used for test score");
 	}
 }
+
+/**ASSIGNMENT:
+Write a class named TestScores. 
+The class constructor should accept an array of test scores as its argument. 
+The class should have a method that returns the average of the test scores. 
+If any test score in the array is negative or greater than 100, the class should throw an IllegalArgumentException. 
+Demonstrate the class in a program.
+-----
+Sample Output:
+Invalid score found.
+Element: 3 Score: 101.0
+The average of the good scores is 90.24
+Press any key to continue . . .
+*/
