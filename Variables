@@ -1,0 +1,53 @@
+//Nguyen Li
+//Feb 5, 2019
+//Assignment: Variables/Windchill
+
+/* Write a program that prompts the user to enter a temperature between -58°F and 41°F
+and a wind speed greater than or equal to 2 then displays the wind-chill temperature.
+
+Enter a temperature between -58°F and 41°F: 5.3
+Enter the wind speed (>= 2) in miles per hour: 6
+The wind chill index is -5.567068455881625
+
+twc = 35.74 + 0.6215ta - 35.75v0.16 + 0.4275tav0.16
+
+		//compute windchill
+		double w = 35.74 + 0.6215*ta - 35.75*Math.pow(v,0.16) + (0.4275*ta*Math.pow(v,0.16));
+
+		//System output
+		System.out.println("The wind chill index is " + w + " mph.");
+*/
+
+//Imports Scanner
+import java.util.Scanner;
+
+public class Nguyen_Li_Windchill
+{
+	public static void main (String[] args)
+	{
+		//variables
+		Scanner keyboard = new Scanner (System.in);
+
+		int ta;	//temperature
+		int v;	//windspeed
+
+
+		//User Inputs
+		System.out.println("Enter a temperature between -58\u00b0F and 41\u00b0F:");
+		ta = keyboard.nextInt();
+
+		System.out.println("Enter the wind speed (>=2) in miles per hour:");
+		v = keyboard.nextInt();
+    
+    //Boolean & compute
+    if (41 <= ta >= -48) {
+    double w = 35.74 + 0.6215*ta - 35.75*Math.pow(v,0.16) + (0.4275*ta*Math.pow(v,0.16));
+    
+    System.out.println("The wind chill index is " + w + " mph.");
+    }
+    else 
+      System.out.println("The wind chill index is " + w + " mph.");
+	}
+}
+
+
