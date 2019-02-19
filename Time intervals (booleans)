@@ -1,0 +1,30 @@
+//Nguyen Li
+//Feb 19th
+//Selection Structures pt 3
+
+/* Write a program named Intervals.java that will take two time intervals (a starting and ending time) and compare them. 
+The program first prompts the user for an earlier and later interval. 
+Each interval consists of two numbers  in 24-hour format (for example, 1507  for  3:07 p.m.): 
+
+*/
+
+import java.util.Scanner; //imports Scanner
+
+public class Nguyen_Li_Intervals
+{
+	public static void main(String[] args)
+	{
+		
+		//variables
+		Scanner keyboard = new Scanner(System.in);
+		
+		double inter1;
+		double inter2;
+		
+		
+		
+		System.out.println("Enter earlier start and end time as two 24-hour format times: ");
+		keyboard = next.Double();
+		
+		System.out.println("Enter later start and end time as two 24-hour format times: "); 
+		
