@@ -1,0 +1,53 @@
+//Nguyen Li
+//Feb 12th
+//Selection Structures pt 2
+
+/* Write a program named Triangle.java that asks for the lengths of the three sides of a triangle
+and computes the perimeter if the input is valid.
+The input is valid if the sum of every pair of two sides is greater than the remaining side.
+For example, the lengths 3, 4, and 5 define a valid triangle:
+3 plus 4 is greater than 5; 4  plus 5 is greater than 3, and 5 plus 3 is greater than 4.
+However, the lengths 7, 2, and 4 do not specify a valid triangle because 2 plus 4 is not greater than 7.
+
+Enter lengths of sides of the triangle: 3 4 5
+The perimeter of the triangle is 12.0
+*/
+
+import java.util.Scanner; //imports scanner
+
+public class Nguyen_Li_Triangle
+{
+	public static void main (String[] args)
+	{
+
+		//variables
+		int a;
+		int b;
+		int c;
+
+		Scanner keyboard = new Scanner (System.in);
+
+		//prompts user
+		System.out.println("Enter one of the sides for the triangle: ");
+		a = keyboard.nextInt();
+
+		System.out.println("Enter one of the sides for the triangle: ");
+		b = keyboard.nextInt();
+
+		System.out.println("Enter one of the sides for the triangle: ");
+		c = keyboard.nextInt();
+
+		//boolean
+		if (a + b <= c)
+			System.out.println("Those sides do not specify a valid triangle.");
+		else if (b + c <= a)
+			System.out.println("Those sides do not specify a valid triangle.");
+		else if (a + c <= b)
+			System.out.println("Those sides do not specify a valid triangle.");
+		else System.out.println("The perimeter of the triangle is " + a + b + c);
+	}
+}
+
+
+
+
