@@ -1,0 +1,36 @@
+//Nguyen Li
+//Mar 3
+//Methods: Validating Credit Card Numbers
+
+/* Return true if the card number is valid 
+public static boolean isValid(long number)
+
+ Return the sum of the doubled even-place digits 
+public static int sumOfDoubleEvenPlace(long number)
+
+ Return the given number if it is a single digit,
+ otherwise return the sum of the two digits 
+public static int getDigit(int n)
+
+ Return the sum of the odd-place digits 
+public static int sumOfOddPlace(long number)
+
+ Return the number of digits in the given number 
+public static int getSize(long number)
+
+ Return the first k number of digits from number. If the
+ number of digits in number is less than k, return number. 
+public static long getPrefix(long number, int k) */
+
+
+import java.util.Scanner; //imports Scanner
+
+public class Nguyen_Li_Creditcard
+{
+    public static void main(String[] args)
+    {
+        
+        //variables
+        Scanner keyboard = new Scanner(System.in);
+        
+        
