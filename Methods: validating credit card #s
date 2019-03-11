@@ -1,36 +1,109 @@
 //Nguyen Li
-//Mar 3
-//Methods: Validating Credit Card Numbers
+//Mar 10
+//Methods: validiatin credit card #'s
 
-/* Return true if the card number is valid 
-public static boolean isValid(long number)
+import java.util.Scanner; //imports Scanner tool
 
- Return the sum of the doubled even-place digits 
-public static int sumOfDoubleEvenPlace(long number)
-
- Return the given number if it is a single digit,
- otherwise return the sum of the two digits 
-public static int getDigit(int n)
-
- Return the sum of the odd-place digits 
-public static int sumOfOddPlace(long number)
-
- Return the number of digits in the given number 
-public static int getSize(long number)
-
- Return the first k number of digits from number. If the
- number of digits in number is less than k, return number. 
-public static long getPrefix(long number, int k) */
-
-
-import java.util.Scanner; //imports Scanner
-
-public class Nguyen_Li_Creditcard
+public class Nguyen_Li_CreditCard
 {
-    public static void main(String[] args)
-    {
-        
-        //variables
-        Scanner keyboard = new Scanner(System.in);
-        
-        
+	public static void main(String[] args)
+	{
+
+		//variables
+		Scanner input = new Scanner(System.in);
+
+
+		//prompts user input
+		System.out.print("Enter a credit card number: ");
+		Long creditCardNumber = input.nextLong();
+
+		if (isValid(creditCardNumber))
+		{
+			System.out.println(creditCardNumber + " is valid");
+		}
+		else
+		{
+			System.out.println(creditCardNumber + " is not valid");
+		}
+	 }
+
+
+		//Boolean method. Return if the card number is valid
+		public static boolean isValid(long number)
+		{
+			boolean validPrefix = (prefixMatched(number, 4) || prefixMatched(number, 5) || prefixMatched(number, 37) || prefixMatched(number, 6));
+			boolean validSize = getSize(number) >= 13 && getSize(number) <= 16;
+			boolean checksumIsValid = ((sumOfOddPlaces(number) + sumOfDoubleEvenPlace(number)) % 10 == 0);
+				return validPrefix && validSize && checksumIsValid;
+		}
+
+
+		//Get the result from step 2
+		public static int sumOfDoubleEvenPlace(long number)
+		{
+			int sum = 0;
+			number /= 10;
+
+			for (int i = 2; number > 0; i+=2)
+			{
+				sum += getDigit((int)(2*(number % 10)));
+				number /= 100;
+			}
+				return sum;
+		 }
+
+		//Return this number it is a single digit, otherwise, return the sum of the two //digits
+		public static int getDigit(int number)
+		{
+			if (number > 9)
+			{
+				return (number / 10) + (number % 10);
+			}
+				return number;
+		 }
+
+
+		//Return sum of sumOfOddPlace( long number )
+		public static int sumOfOddPlaces(long number)
+		{
+			int sum = 0;
+
+			for (int i = 1; number > 0; i+=2)
+			{
+				sum += number % 10;
+				number /= 100; //getDigit((int)(number % 10));
+			}
+				return sum;
+		 }
+
+		public static boolean prefixMatched(long number, int d){
+
+		return getPrefix(number, getSize(d)) == d;
+
+		}
+
+		//Return the number of digits in digit
+		public static int getSize(long d){
+
+		int size = 0;
+
+		for (long i = d; i > 0; i /= 10, size++){}
+
+		return size;
+
+		}
+
+		//Return the first k number of digits from the number. If the number of digits in number is less than k, return number
+		public static long getPrefix(long number, int k){
+
+		if (getSize(number) < k){
+
+		return number;
+
+		}
+
+		return (long)(number / Math.pow(10, (getSize(number) - k)));
+
+		}
+
+}
