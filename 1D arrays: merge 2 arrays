@@ -1,0 +1,63 @@
+//Nguyen Li
+//Mar 26
+//1D arrays pt 2
+
+/* Write a test program named MergeTest.java
+that prompts the user for the lengths and contents of two sorted lists.
+
+Enter size of list 1: 5
+Enter items in list 1: 1 5 16 91 248
+Enter size of list 2: 4
+Enter items in list 2: 2 4 5 27
+list1 is 1 5 16 91 248
+list2 is 2 4 5 27
+The merged list is 1 2 4 5 5 16 27 91 248
+
+System.out.print("Enter " + myList.length + " values: ");
+for (int i = 0; i < myList.length; i++)   myList[i] = input.nextDouble();
+*/
+
+import java.util.Scanner; //imports scanner tool
+
+
+public class Nguyen_Li_MergeTest
+{
+	public static void main(String[] args) //main method
+	{
+		Scanner input = new Scanner(System.in);
+
+
+		// prompts user to input size/items for list1
+		System.out.print("Enter the size of list 1: ");
+		for (int i = 0; i < list1.length; i++)
+		list1[i]
+
+
+		System.out.print("Enter items in list 1: ");
+		
+
+
+		//prompts user to input size/items for list2
+		System.out.print("Enter the size of list 2: ");
+
+
+		System.out.print("Enter items in list 2: ");
+
+
+	}
+}
+
+
+	// public static int[] merge(int[] list1, int[] list2) //method to merge arrays
+
+
+
+
+
+
+
+
+
+
+
+
