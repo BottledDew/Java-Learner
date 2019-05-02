@@ -1,0 +1,47 @@
+//Nguyen Li
+//Inheritance and polymorphism
+
+public class NguyenLi_Account
+{
+	long numb; //number
+	double bal; //balance
+
+	public Account()
+	{
+		long numb = 0;
+		double bal = 0;
+	}
+
+	public Account(long numb, double bal){
+	}
+
+	public double getNumber()
+	{
+		return numb;
+	}
+	
+	public long getBalance()
+	{
+		return bal;
+	}
+	
+	public void setBalance(long bal)
+	{
+		this.bal = bal
+	}
+	
+	
+
+
+//CreditCardAccount
+
+public class NguyenLi_CreditCardAccount
+extends NguyenLi_Account
+{
+	private double apr;
+	private double creditLimit;
+
+
+
+
+
