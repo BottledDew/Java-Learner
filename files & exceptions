@@ -1,0 +1,70 @@
+//Nguyen Li
+//May 14
+//Files & Exceptions customer class
+
+public NguyenLi_Customer
+{
+public static void main
+{
+
+
+public Account(int acct_number, String name, double balance)
+{
+int acct_number;
+String name;
+double balance;
+}
+
+public int acct_number
+{
+return acct_number;
+}
+
+public String name
+{
+return name;
+}
+
+public balance
+{
+return balance
+}
+
+
+
+
+//Nguyen Li
+//May 14
+//Files & Exceptions account class
+
+import java.util.Scanner;
+
+public class NguyenLi_Account
+{
+public static void
+{
+Scanner input = new Scanner(system.in)
+
+
+system.out.print("Please enter your name: ");
+
+for (int i=0; i<0; x++) 
+system.out.print("Please enter your name: ");
+
+
+system.out.print("Please enter your account number: ");
+
+for (int i=0; i<0; x++) 
+system.out.print("Please enter your name: ");
+
+
+system.out.print("Your current balance is " + balance);
+
+
+system.out.print("D)eposit, W)ithdraw, or F)inish?");
+
+
+
+public static int findIndex(ArrayList<Account> accountList, int accountNumber)
+{
+
