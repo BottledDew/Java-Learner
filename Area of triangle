@@ -1,0 +1,44 @@
+//Nguyen Li
+//June 17th
+//Introduction.java
+
+/* Write a Java program that prints:
+Your name.
+A blank line.
+Your favorite short poem (or first verse of your favorite poem).
+The author of the poem, indented four spaces and preceded by two hyphens. If you don’t know who the author was, use Anonymous.
+A blank line.
+Your age in years.
+Your age in days (presume there are 365 days in a year)--have Java do the calculation.
+The result of multiplying 12345679 times your favorite one-digit number times 9 -- have Java do the calculation. */
+
+public class Introduction
+{
+	public static void main(String[] args)
+	{
+		//variables
+		final int DAY_IN_YEAR = 365;
+		int age = 21;
+		int ageInDays = age * DAY_IN_YEAR;
+		double multiplication = (123456789*1)*9;
+
+
+		//Statements
+		System.out.println("Nguyen Li");
+
+		System.out.println("It matters not how strait the gate, \nHow charged with punishments the scroll, \nI am the master of my fate; \nI am the captain of my soul.");
+
+		System.out.println("    --William Ernest Henley");
+
+		System.out.println("");
+
+		System.out.println(age + " years old");
+
+		System.out.println("Age in days is " + ageInDays);
+
+		System.out.println(+ multiplication);
+
+
+	}
+}
+
