@@ -1,44 +1,46 @@
 //Nguyen Li
-//June 17th
-//Introduction.java
+//June 18th
+//Variables
 
-/* Write a Java program that prints:
-Your name.
-A blank line.
-Your favorite short poem (or first verse of your favorite poem).
-The author of the poem, indented four spaces and preceded by two hyphens. If you don’t know who the author was, use Anonymous.
-A blank line.
-Your age in years.
-Your age in days (presume there are 365 days in a year)--have Java do the calculation.
-The result of multiplying 12345679 times your favorite one-digit number times 9 -- have Java do the calculation. */
+/* Write a program that prompts the user to enter three
+points, (x1, y1), (x2, y2), and (x3, y3), of a triangle then displays its area.
 
-public class Introduction
+The formula for computing the area of a triangle is
+s = (side1 + side2 + side3)/2
+area = sqrt(s(s - side1)(s - side2)(s - side3)) */
+
+
+import java.util.Scanner; //imports Scanner tool
+
+public class AreaTriangle
 {
 	public static void main(String[] args)
 	{
-		//variables
-		final int DAY_IN_YEAR = 365;
-		int age = 21;
-		int ageInDays = age * DAY_IN_YEAR;
-		double multiplication = (123456789*1)*9;
 
+		Scanner input = new Scanner(System.in); //assign var to Scanner
 
-		//Statements
-		System.out.println("Nguyen Li");
+		//Prompts user to enter three points
+		System.out.print("Enter the coordinates of three points separated by spaces: ");
+		double x1 = input.nextDouble();
+		double y1 = input.nextDouble();
+		double x2 = input.nextDouble();
+		double y2 = input.nextDouble();
+		double x3 = input.nextDouble();
+		double y3 = input.nextDouble();
 
-		System.out.println("It matters not how strait the gate, \nHow charged with punishments the scroll, \nI am the master of my fate; \nI am the captain of my soul.");
+		//Side formula & calculations
+		double side1 = Math.sqrt(Math.pow(x1 - x2, 2) + Math.pow(y1 - y2, 2));
+		double side2 = Math.sqrt(Math.pow(x2 - x3, 2) + Math.pow(y2 - y3, 2));
+		double side3 = Math.sqrt(Math.pow(x1 - x3, 2) + Math.pow(y1 - y3, 2));
 
-		System.out.println("    --William Ernest Henley");
+		double s = (side1 + side2 + side3) / 2;
 
-		System.out.println("");
+		//calculate area of triangle
+		double areaOfTriangle = Math.sqrt(s * (s - side1) * (s - side2) * (s - side3));
 
-		System.out.println(age + " years old");
-
-		System.out.println("Age in days is " + ageInDays);
-
-		System.out.println(+ multiplication);
-
+		//outputs the area
+		System.out.printf("The area of the triangle is " + "%.2f \n", areaOfTriangle);
+		//System.out.printf("%.2f", areaOfTriangle);
 
 	}
 }
-
