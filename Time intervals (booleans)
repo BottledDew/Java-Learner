@@ -1,30 +1,66 @@
 //Nguyen Li
-//Feb 19th
-//Selection Structures pt 3
+//June 24th, 2019
+//Selection Structures pt3
 
-/* Write a program named Intervals.java that will take two time intervals (a starting and ending time) and compare them. 
-The program first prompts the user for an earlier and later interval. 
-Each interval consists of two numbers  in 24-hour format (for example, 1507  for  3:07 p.m.): 
+/* first prompts the user for an earlier and later interval.
+Each interval consists of two numbers  in 24-hour format
+for example, 1507  for  3:07 p.m.
+The program will then calculate how many minutes are in each interval,
+which one is longer, and whether the intervals overlap
+(does the later interval start before the first one is finished
 
-*/
+If the intervals are of equal length, output should say they are equally long.
+If the later interval starts at the same time that the earlier interval ends,
+they do not overlap.
 
-import java.util.Scanner; //imports Scanner
+Convert the times to number of minutes after midnight.
+This will make your calculations much easier.
+0507 is 5 hours and 7 minutes past midnight, or 307 minutes past midnight.
+You use / and % with 100 to split up the time into hr and mins part,
+but use 60 when calculating total minutes! */
 
-public class Nguyen_Li_Intervals
+
+import java.util.Scanner; //imports Scanner tool
+
+public class Intervals
 {
 	public static void main(String[] args)
 	{
-		
-		//variables
-		Scanner keyboard = new Scanner(System.in);
-		
-		double inter1;
-		double inter2;
-		
-		
-		
-		System.out.println("Enter earlier start and end time as two 24-hour format times: ");
-		keyboard = next.Double();
-		
-		System.out.println("Enter later start and end time as two 24-hour format times: "); 
-		
+
+		Scanner input = new Scanner(System.in); //creates Scanner var
+
+		//Variables
+		final int SIXTY_MINS = 60;
+
+
+		//Prompts user input
+		System.out.print("Enter earlier start and "
+							+ "end time as two 24-hour format times: ");
+		int earlierStartTime = input.nextInt();
+		int earlierEndTime = input.nextInt();
+
+		System.out.print("Enter later start and"
+							+ "end time as two 24-hour format times: ");
+		int laterStartTime = input.nextInt();
+		int laterEndTime = input.nextInt();
+
+
+		//Converting hours to minutes, creates ref var for interval
+		int earlierStartMinutes = (earlierStartTime/100 * SIXTY_MINS) + (earlierStartTime%100);
+		int earlierEndMinutes = (earlierEndTime/100 * SIXTY_MINS) + (earlierEndTime%100);
+
+		int laterStartMinutes = (laterStartTime/100 * SIXTY_MINS) + (laterStartTime%100);
+		int laterEndMinutes = (laterEndTime/100 * SIXTY_MINS) + (laterEndTime%100);
+
+		int earlierInterval = earlierEndMinutes - earlierStartMinutes;
+		int laterInterval = laterEndMinutes - laterStartMinutes;
+
+
+		//Displays output for intervals
+		System.out.println("The earlier interval is " + earlierInterval
+							+ " minutes long");
+		System.out.println("The later interval is " + laterInterval
+							+ " minutes long");
+	}
+}
+
