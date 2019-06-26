@@ -31,6 +31,7 @@ public class Intervals
 
 		//Variables
 		final int SIXTY_MINS = 60;
+		int temp, temp2;
 
 
 		//Prompts user input
@@ -45,15 +46,50 @@ public class Intervals
 		int laterEndTime = input.nextInt();
 
 
-		//Converting hours to minutes, creates ref var for interval
-		int earlierStartMinutes = (earlierStartTime/100 * SIXTY_MINS) + (earlierStartTime%100);
-		int earlierEndMinutes = (earlierEndTime/100 * SIXTY_MINS) + (earlierEndTime%100);
+		//extra challenge
+		//do-while to check if user enters times in wrong order
+		do
+		{
+			temp = earlierStartTime;
+			earlierStartTime = earlierEndTime;
+			earlierEndTime = temp;
+		}
+		while (earlierStartTime > earlierEndTime);
 
-		int laterStartMinutes = (laterStartTime/100 * SIXTY_MINS) + (laterStartTime%100);
-		int laterEndMinutes = (laterEndTime/100 * SIXTY_MINS) + (laterEndTime%100);
+		do
+		{
+			temp = laterStartTime;
+			laterStartTime = laterEndTime;
+			laterEndTime = temp;
+		}
+		while (laterStartTime > laterEndTime);
+
+
+		//Converting hours to minutes, creates ref var for interval
+		int earlierStartMinutes = (earlierStartTime/100 * SIXTY_MINS)
+			+ (earlierStartTime%100);
+		int earlierEndMinutes = (earlierEndTime/100 * SIXTY_MINS)
+			+ (earlierEndTime%100);
+
+		int laterStartMinutes = (laterStartTime/100 * SIXTY_MINS)
+			+ (laterStartTime%100);
+		int laterEndMinutes = (laterEndTime/100 * SIXTY_MINS)
+			+ (laterEndTime%100);
 
 		int earlierInterval = earlierEndMinutes - earlierStartMinutes;
 		int laterInterval = laterEndMinutes - laterStartMinutes;
+
+
+		//extra challenge
+		//do-while if user enters interval in wrong order
+		do
+		{
+			temp2 = earlierInterval;
+			earlierInterval = laterInterval;
+			laterInterval = temp2;
+		}
+		while (earlierInterval < laterInterval);
+
 
 
 		//Displays output for intervals
@@ -61,6 +97,23 @@ public class Intervals
 							+ " minutes long");
 		System.out.println("The later interval is " + laterInterval
 							+ " minutes long");
+
+
+		//Compares/checks interval lengths/overlaps & displays output
+		if (earlierInterval > laterInterval) //lengths check
+		{
+			System.out.println("The earlier interval is longer.");
+		}
+		else
+			System.out.println("The later interval is longer.");
+
+		if (earlierEndMinutes > laterStartMinutes) //Overlap check
+		{
+			System.out.println("These intervals overlap.");
+		}
+		else
+			System.out.println("These interals do not overlap.");
+
+
 	}
 }
-
