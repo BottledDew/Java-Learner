@@ -1,0 +1,52 @@
+//Nguyen Li
+//June 20
+//Selection Structures Pt 1
+
+/* Your program, named Shipping should
+ask for the weight of the package and display the shipping cost.
+If the weight is negative or zero, display a message
+“Invalid input.”
+If the weight is greater than 20, display a message
+“The package cannot be shipped.”
+
+0 < w <= 1	    3.5
+1 < w <= 3	    5.5
+3 < w <= 10	    8.5
+10 < w <= 20	10.5
+
+Enter weight of package in pounds: 5.7
+Cost: $8.50
+
+Enter weight of package in pounds: 25.2
+The package cannot be shipped.
+*/
+
+import java.util.Scanner; //imports Scanner
+
+public class Shipping
+{
+	public static void main(String[] args)
+	{
+
+		Scanner input = new Scanner (System.in); //creates Scanner var
+		double w; //w = weight
+
+		//User prompts
+		System.out.print("Enter the weight of pacakge in pounds: ");
+		w = input.nextDouble();
+
+		//boolean
+		if (w < 0)
+			System.out.println("Invalid input.");
+		else if (w <= 1)
+			System.out.println("Cost: $3.5");
+		else if (w <= 3)
+			System.out.println("Cost: $5.5");
+		else if (w <= 10)
+			System.out.println("Cost: $8.5");
+		else if (w <= 20)
+			System.out.println("Cost: $10.5");
+		else
+			System.out.println("The package cannot be shipped");
+	}
+}
