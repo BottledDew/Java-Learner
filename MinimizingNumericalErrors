@@ -1,0 +1,22 @@
+//Nguyen Li
+//June 27
+//Minimzing Numerical errors
+
+public class MinimizingNumericalErrors
+{
+	public static void main(String[] args)
+	{
+
+		double sum = 0;
+		double currentValue = 50;
+
+		//loop that adds increments of .01
+		for (double count = 0; count < 100; count++);
+		{
+			sum += currentValue;
+			currentValue -= 0.01;
+		}
+
+		System.out.println("The sum is " + sum);
+	}
+}
