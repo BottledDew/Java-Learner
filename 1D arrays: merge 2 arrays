@@ -1,5 +1,5 @@
 //Nguyen Li
-//Mar 26
+//July 9th, 2019
 //1D arrays pt 2
 
 /* Write a test program named MergeTest.java
@@ -20,35 +20,60 @@ for (int i = 0; i < myList.length; i++)   myList[i] = input.nextDouble();
 import java.util.Scanner; //imports scanner tool
 
 
-public class Nguyen_Li_MergeTest
+public class MergeTest
 {
-	public static void main(String[] args) //main method
+	public static void main(String[] args)
 	{
-		Scanner input = new Scanner(System.in);
+
+		Scanner input = new Scanner(System.in); //creates Scanner object
 
 
 		// prompts user to input size/items for list1
 		System.out.print("Enter the size of list 1: ");
-		for (int i = 0; i < list1.length; i++)
-		list1[i]
+		int list1 = input.nextInt();
+
+		//array1 holds items for list1
+		double[] array1 = new double[list1];
 
 
 		System.out.print("Enter items in list 1: ");
-		
+		System.out.print("Enter " + myList.length + " values: ");
+		for (int i = 0; i < myList.length; i++)
+		myList[i] = input.nextDouble();
+
 
 
 		//prompts user to input size/items for list2
 		System.out.print("Enter the size of list 2: ");
+		int list2 = input.nextInt();
+
+		//array2 hold items for list2
+		double[] array2 = new double[list2];
 
 
 		System.out.print("Enter items in list 2: ");
 
 
+		//outputs results
+		for (int i = 0; i < myList.length; i++)
+		{
+			System.out.print(myList[i] + " ");
+		}
+
+
 	}
 }
 
+	//method to merge arrays
+	public static int[] merge(int[] list1, int[] list2)
+	{
+		String[] mergedArray = new String[first.length + second.length];
 
-	// public static int[] merge(int[] list1, int[] list2) //method to merge arrays
+		System.arraycopy(first, 0, mergedArray, 0, first.length);
+		System.arraycopy(second, 0, mergedArray, first.length, second.length);
+
+		return mergedArray;
+}
 
 
 
