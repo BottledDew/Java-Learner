@@ -1,13 +1,13 @@
 //Nguyen Li
-//Mar 21
+//July 8th
 //1D arrays pt 1
 
-/** Your program must use an array of 100 boolean elements, 
-each of which indicates whether a locker is open (true) or closed (false). 
+/** Your program must use an array of 100 boolean elements,
+each of which indicates whether a locker is open (true) or closed (false).
 Initially, all lockers are closed.
 
-You do not need to write a special case for students S1 and S2. 
-Student S1 is changing the status of every locker starting with L1, 
+You do not need to write a special case for students S1 and S2.
+Student S1 is changing the status of every locker starting with L1,
 and S2 is changing the status of every second locker starting with L2.
 
 S1 opens every locker
@@ -15,21 +15,24 @@ S2 closes every other locker starting at L2 (subscript 1)
 S3 closes/opens every 3 locker starting at L3 (subscript 2)  *closes if open/ opens if closed
 s4 ... **/
 
-public class Nguyen_Li_LockerPuzzle
+public class LockerPuzzle
 {
-    public static void main(String[] args)
-    {
-    
-        //Builds the array/defines var 'lockers'
+	public static void main(String[] args)
+	{
+
+		//Builds the array/defines var 'lockers'
         boolean[] lockers = new boolean[100];
-    
+
         //for opening locker (S1)
+        //This opens every locker
         for (int i = 1; i < lockers.length; i++)
         {
-            lockers[i] = true;
+            lockers[i] = true; //true = open
         }
-        
+
         //for the other lockers opening
+        //Starts at locker 2 and closes every other locker
+        //nested loop implements changes to every other locker
         for (int i = 2; i < lockers.length; i++)
         {
             for (int j = 1; i * j < lockers.length; j++)
@@ -37,12 +40,11 @@ public class Nguyen_Li_LockerPuzzle
                 lockers[i * j] = !lockers[i * j];
             }
          }
-         
+
          //displays which lockers are open
          for (int i = 0; i < lockers.length; i++)
          {
-            if (lockers[i]) System.out.print(" " + i);
+            if (lockers[i]) System.out.print(i + " \n");
          }
     }
 }
-         
