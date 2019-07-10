@@ -64,17 +64,66 @@ public class MergeTest
 	}
 }
 
-	//method to merge arrays
-	public static int[] merge(int[] list1, int[] list2)
-	{
-		String[] mergedArray = new String[first.length + second.length];
-
-		System.arraycopy(first, 0, mergedArray, 0, first.length);
-		System.arraycopy(second, 0, mergedArray, first.length, second.length);
-
-		return mergedArray;
 }
 
+private static int[] marge(int[] list1, int[] list2) {
+
+int n = list1.length+list2.length;
+
+int[] margeList = new int[n];
+
+int i=0;
+
+int j=0;
+
+int k=0;
+
+while(i<list1.length && j<list2.length){
+
+if(list1[i]<list2[j]){
+
+margeList[k]=list1[i];
+
+i++;
+
+}else if(list1[i]>=list2[j]){
+
+margeList[k]=list2[j];
+
+j++;
+
+}
+
+k++;
+
+}
+
+while(i<list1.length){
+
+margeList[k]=list1[i];
+
+k++;
+
+i++;
+
+}
+
+while(j<list2.length){
+
+margeList[k]=list2[j];
+
+j++;
+
+k++;
+
+}
+
+return margeList;
+
+}
+
+}
+}
 
 
 
