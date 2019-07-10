@@ -2,7 +2,8 @@
 //July 9th, 2019
 //1D arrays pt 2
 
-/* Write a test program named MergeTest.java
+/*
+Write a test program named MergeTest.java
 that prompts the user for the lengths and contents of two sorted lists.
 
 Enter size of list 1: 5
@@ -12,9 +13,6 @@ Enter items in list 2: 2 4 5 27
 list1 is 1 5 16 91 248
 list2 is 2 4 5 27
 The merged list is 1 2 4 5 5 16 27 91 248
-
-System.out.print("Enter " + myList.length + " values: ");
-for (int i = 0; i < myList.length; i++)   myList[i] = input.nextDouble();
 */
 
 import java.util.Scanner; //imports scanner tool
@@ -22,115 +20,114 @@ import java.util.Scanner; //imports scanner tool
 
 public class MergeTest
 {
-	public static void main(String[] args)
-	{
+    public static void main(String[] args)
+    {
 
-		Scanner input = new Scanner(System.in); //creates Scanner object
-
-
-		// prompts user to input size/items for list1
-		System.out.print("Enter the size of list 1: ");
-		int list1 = input.nextInt();
-
-		//array1 holds items for list1
-		double[] array1 = new double[list1];
+        Scanner input = new Scanner(System.in); //creates Scanner object
 
 
-		System.out.print("Enter items in list 1: ");
-		System.out.print("Enter " + myList.length + " values: ");
-		for (int i = 0; i < myList.length; i++)
-		myList[i] = input.nextDouble();
+        // prompts user to input size of 1st list
+        System.out.print("Enter the size of list 1: ");
+        int size1 = input.nextInt();
+
+        //array1 holds items for list1
+        int[] list1 = new int[size1];
+
+        //prompts user to input items into 1st list
+        System.out.print("Enter items in list 1: ");
+        for (int i = 0; i < size1; i++);
+        list1[i] = input.nextInt();
 
 
+        //prompts user to input size of 2nd list
+        System.out.print("Enter the size of list 2: ");
+        int size2 = input.nextInt();
 
-		//prompts user to input size/items for list2
-		System.out.print("Enter the size of list 2: ");
-		int list2 = input.nextInt();
+        //array1 holds items for list2
+        int[] list2 = new int[size2];
 
-		//array2 hold items for list2
-		double[] array2 = new double[list2];
-
-
-		System.out.print("Enter items in list 2: ");
-
-
-		//outputs results
-		for (int i = 0; i < myList.length; i++)
-		{
-			System.out.print(myList[i] + " ");
-		}
+        //prompts user to input items into 2nd list
+        System.out.print("Enter items in list 2: ");
+        for (i = 0; i < size2; i++);
+        list2[i] = input.nextInt();
 
 
-	}
+        //outputs contents of list1
+        System.out.println("list1 is: ");
+        for (int i = 0; i < list1.length; i++)
+        {
+            System.out.print(list1[i] + " ");
+        }
+
+
+        //outputs content of list2
+        System.out.println("list2 is: ");
+        for (int i = 0; i < list2.length; i++)
+        {
+            System.out.print(list2[i] + " ");
+        }
+
+
+        //outputs contents of merged list
+        int[] mergeList = merge (list1, list2);
+
+        System.out.println("The merged list is: ");
+        for (int i = 0; i < mergedArray.length; i++)
+        {
+            System.out.print(mergedArray[i] + " ");
+        }
+    }
+
+        //method to merge arrays
+        public static int[] merge(int[] list1, int[] list2)
+        {
+            //adds both arrays together
+            int list3 = list1.length + list2.length;
+            int[] mergedList = new int[list3];
+
+            //set loop primitives to 0
+            int i = 0;
+            int j = 0;
+            int k = 0;
+
+            //loop to check difference of both ararys
+            while(i < list1.length && j < list2.length)
+            {
+                //if list 1 is smaller, merge list1 into mergedList
+                if(list1[i] < list2[j])
+                {
+                    mergedList[k] = list1[i];
+                    i++;
+                }
+                //else if list1 is greater or equal to list2
+                //and merge list2 into mergeList
+                else if
+                (list1[i] >= list2[j])
+                {
+                    mergedList[k] = list2[j];
+                    j++;
+                }
+                    k++;
+             }
+
+            //sorts both list1 & list2 by check difference for both
+            while(i < list1.length)
+            {
+                mergedList[k] = list1[i];
+                k++;
+                i++;
+            }
+
+            while(j < list2.length)
+            {
+                mergedList[k] = list2[j];
+                j++;
+                k++;
+            }
+            //returns result
+            return mergedList;
+        }
 }
-
-}
-
-private static int[] marge(int[] list1, int[] list2) {
-
-int n = list1.length+list2.length;
-
-int[] margeList = new int[n];
-
-int i=0;
-
-int j=0;
-
-int k=0;
-
-while(i<list1.length && j<list2.length){
-
-if(list1[i]<list2[j]){
-
-margeList[k]=list1[i];
-
-i++;
-
-}else if(list1[i]>=list2[j]){
-
-margeList[k]=list2[j];
-
-j++;
-
-}
-
-k++;
-
-}
-
-while(i<list1.length){
-
-margeList[k]=list1[i];
-
-k++;
-
-i++;
-
-}
-
-while(j<list2.length){
-
-margeList[k]=list2[j];
-
-j++;
-
-k++;
-
-}
-
-return margeList;
-
-}
-
-}
-}
-
-
-
-
-
-
-
 
 
 
